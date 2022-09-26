@@ -17,7 +17,7 @@
     {
         $cantidad = $_GET['cantidad'];
         echo "<h2>Hay que hacer $cantidad input</h2>";
-        echo "<form method='get' action='ejFormLoop.php'>";
+        echo "<form method='get' action='ej2.php'>";
         echo "<input type='hidden' name='cantidad' value='$cantidad'>";
         for ($i=1;$i<=$cantidad;$i++)
         {
@@ -36,12 +36,11 @@
         }
     }else{
         ?>
-        <form method="get" action="ejFormLoop.php">
+        <form method="get" action="ej2.php">
         <input type="number" name="cantidad">
         <input type="submit" name="enviar" value="Enviar">
         </form>
         <?php
-
     }
     ?>
 </body>
