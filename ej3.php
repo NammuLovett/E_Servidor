@@ -17,8 +17,6 @@
     /*
     
         A partir de un número de filas y columnas, crear una tabla con ese tamaño. Las celdas deben estar rellenadas con los valores de las coordenadas de cada celda. (tabla.php)
-    Basándote en el ejercicio anterior, rellena la tabla de manera que solo los bordes tengan contenido, quedándose el resto de celdas en blanco. (cuadrado.php)
-    Basándote en el ejercicio anterior, ahora sólo debe aparecer el contenido de los dos diagonales.(equis.php)
     
     
     */

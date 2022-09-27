@@ -23,7 +23,6 @@
     /*
     
     Basándote en el ejercicio anterior, rellena la tabla de manera que solo los bordes tengan contenido, quedándose el resto de celdas en blanco. (cuadrado.php)
-    Basándote en el ejercicio anterior, ahora sólo debe aparecer el contenido de los dos diagonales.(equis.php)
     
     
     */
