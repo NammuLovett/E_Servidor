@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TABLA</title>
+    <style>
+        table {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +22,6 @@
     <?php
     /*
     
-        A partir de un número de filas y columnas, crear una tabla con ese tamaño. Las celdas deben estar rellenadas con los valores de las coordenadas de cada celda. (tabla.php)
     Basándote en el ejercicio anterior, rellena la tabla de manera que solo los bordes tengan contenido, quedándose el resto de celdas en blanco. (cuadrado.php)
     Basándote en el ejercicio anterior, ahora sólo debe aparecer el contenido de los dos diagonales.(equis.php)
     
@@ -25,7 +30,7 @@
 
     if (!isset($_GET['cantidad'])) {
     ?>
-        <form method="get" action="ej3.php">
+        <form method="get" action="#">
             <input type="number" name="cantidad">
             <input type="submit" name="enviar" value="Enviar">
         </form>
@@ -38,7 +43,11 @@
         for ($i = 0; $i < $cantidad; $i++) {
             echo "<tr>";
             for ($j = 0; $j < $cantidad; $j++) {
-                echo "<td>$i,$j</td>";
+                if ($i == 0 || $j == 0 || $i == $cantidad - 1 || $j == $cantidad - 1) {
+                    echo "<td>X</td>";
+                } else {
+                    echo "<td></td>";
+                }
             }
             "</tr>";
         }
