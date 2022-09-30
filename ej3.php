@@ -15,15 +15,12 @@
 
     <?php
     /*
-    
         A partir de un número de filas y columnas, crear una tabla con ese tamaño. Las celdas deben estar rellenadas con los valores de las coordenadas de cada celda. (tabla.php)
-    
-    
     */
 
     if (!isset($_GET['cantidad'])) {
     ?>
-        <form method="get" action="ej3.php">
+        <form method="get" action="#">
             <input type="number" name="cantidad">
             <input type="submit" name="enviar" value="Enviar">
         </form>

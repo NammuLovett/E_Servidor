@@ -11,7 +11,6 @@
             width: 50%;
             margin: auto;
             border: 1px;
-
         }
 
 
