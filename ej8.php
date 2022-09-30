@@ -62,7 +62,7 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
 
         for ($i = -1; $i < $cantidad; $i++) {
             echo "<tr>";
-            for ($j = -1; $j < $cantidad; $j++) {
+            for ($j = -1; $j < 2; $j++) {
                 if ($j == -1 && $i == -1) {
                     echo "<th>Nombre</th>";
                 } elseif ($i == -1 && $j == 0) {
