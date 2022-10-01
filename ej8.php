@@ -16,10 +16,11 @@
             height: 50px;
             width: 50px;
             text-align: center;
+
         }
 
         th {
-            background-color: blue;
+            background-color: navy;
             color: azure;
             height: 50px;
             width: 50px;
@@ -62,23 +63,25 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
         for ($i = -1; $i < $cantidad; $i++) {
             echo "<tr>";
             for ($j = -1; $j < 2; $j++) {
-                if ($j == -1 && $i == -1) {
+                if ($j == -1 && $i == -1) { //En la casilla j e i -1 pone nombre
                     echo "<th>Nombre</th>";
-                } elseif ($i == -1 && $j == 0) {
+                } elseif ($i == -1 && $j == 0) { //En la casilla j 0 e i -1 pone email
                     echo "<th>Email</th>";
-                } elseif ($i == -1 && $j == 1) {
+                } elseif ($i == -1 && $j == 1) { //En la casilla j -1 e i -1 pone email
                     echo "<th>Altura</th>";
+                    //inputs nombre / email / altura
                 } elseif ($j == -1) {
-                    echo "<td style='background-color:  color:azure;'>$i</td>";
-                } elseif ($i == -1) {
-                    echo "<th>$j</th>";
-                } else {
-                    echo "<td>", ($i) * ($j), "</td>";
+                    echo "<td><input type='text' name='nombre' placeholder='nombre'></td>";
+                } elseif ($j == 0) {
+                    echo "<td><input type='text' name='email' placeholder='email'></td>";
+                } elseif ($j == 1) {
+                    echo "<td><input type='text' name='altura' placeholder='altura'></td>";
                 }
             }
             "</tr>";
         }
-        echo "</table>";
+        echo "</table> <br>";
+        echo '<input type="submit" name="enviar" value="Enviar">';
     }
     ?>
 
