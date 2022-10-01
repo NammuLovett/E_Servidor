@@ -59,7 +59,6 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
         $cantidad = $_GET['cantidad'];
         echo "<h3>Hay que hacer $cantidad filas </h3>";
         echo "<table border = '1'>";
-
         for ($i = -1; $i < $cantidad; $i++) {
             echo "<tr>";
             for ($j = -1; $j < 2; $j++) {
