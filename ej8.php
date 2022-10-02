@@ -71,20 +71,31 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
                     echo "<th>Altura</th>";
                     //inputs nombre / email / altura
                 } elseif ($j == -1) {
-                    echo "<td><input type='text' name='nombre' placeholder='nombre'></td>";
+                    echo "<td><input type='text' name='nombre.$i' placeholder='nombre'></td>";
                 } elseif ($j == 0) {
-                    echo "<td><input type='text' name='email' placeholder='email'></td>";
+                    echo "<td><input type='text' name='email.$i' placeholder='email'></td>";
                 } elseif ($j == 1) {
-                    echo "<td><input type='text' name='altura' placeholder='altura'></td>";
+                    echo "<td><input type='text' name='altura.$i' placeholder='altura'></td>";
                 }
             }
             "</tr>";
         }
         echo "</table> <br>";
-        echo '<input type="submit" name="enviar" value="Enviar">';
+
+        /*  if (isset($_GET['nombre$i'])) {
+            $nombre = array_fill(0, nombre, 'nombre');
+        }
+        var_dump($nombre);
+    } else {
+ */    ?>
+        <form method="get" action="#">
+            <input type="number" name="cantidad">
+            <input type="submit" name="enviar" value="Enviar">
+        </form>
+    <?php
     }
     ?>
-
+    }
 </body>
 
 </html>
