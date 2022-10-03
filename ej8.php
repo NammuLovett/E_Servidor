@@ -55,7 +55,7 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
             <input type="number" name="cantidad">
             <input type="submit" name="enviar" value="Enviar">
         </form>
-    <?php
+        <?php
     } else {
         $cantidad = $_GET['cantidad'];
         echo "<h3>Hay que hacer $cantidad filas </h3>";
@@ -78,24 +78,25 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
                     echo "<td><input type='text' name='altura.$i' placeholder='altura'></td>";
                 }
             }
-            "</tr>";
+            echo "</tr>";
         }
         echo "</table> <br>";
+        //---------------------------
+        if (isset($_GET['nombre0'])) {
+            for ($i = 0; $i < $cantidad; $i++) {
+                $arrayPersona[$i] = [['nombre' => $_GET['nombre' . $i], 'email' => $_GET['email' . $i], 'altura' => $_GET['altura.$i']]];
+            }
+        } else {
 
-        /*  if (isset($_GET['nombre$i'])) {
-            $nombre = array_fill(0, nombre, 'nombre');
-        }
-        var_dump($nombre);
-    } else {
- */    ?>
-        <form method="get" action="#">
-            <input type="number" name="cantidad">
-            <input type="submit" name="enviar" value="Enviar">
-        </form>
+        ?>
+            <form method="get" action="#">
+                <input type="submit" name="enviar" vaslue="Enviar">
+            </form>
     <?php
+        }
     }
     ?>
-    }
+
 </body>
 
 </html>
