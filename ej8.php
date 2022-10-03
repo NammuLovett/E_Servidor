@@ -53,17 +53,18 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
     ?>
         <form method="get" action="#">
             <input type="number" name="cantidad">
-            <input type="submit" name="enviar" value="Enviar">
+            <input type="submit" name="operacion" value="Enviar">
         </form>
     <?php
     } else {
         $cantidad = $_GET['cantidad'];
         echo "<h3>Hay que hacer $cantidad filas </h3>";
         echo "<table border = '1'>";
+        echo "<form action='#'>";
         for ($i = -1; $i < $cantidad; $i++) {
             echo "<tr>";
             for ($j = -1; $j < 2; $j++) {
-                if ($j == -1 && $i == -1) { //En la casilla j e i -1 pone nombre
+                if ($i == -1 && $j == -1) { //En la casilla j e i -1 pone nombre
                     echo "<th>Nombre</th>";
                 } elseif ($i == -1 && $j == 0) { //En la casilla j 0 e i -1 pone email
                     echo "<th>Email</th>";
@@ -80,16 +81,17 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
             }
             "</tr>";
         }
+        /* echo "<input type='submit' name='operation' value='introducir'>"; */
+        echo "</form>";
         echo "</table> <br>";
 
-        /*  if (isset($_GET['nombre$i'])) {
+
+        /* if (isset($_GET['nombre$i'])) {
             $nombre = array_fill(0, nombre, 'nombre');
-        }
         var_dump($nombre);
-    } else {
- */    ?>
+    } else { */
+    ?>
         <form method="get" action="#">
-            <input type="number" name="cantidad">
             <input type="submit" name="enviar" value="Enviar">
         </form>
     <?php
