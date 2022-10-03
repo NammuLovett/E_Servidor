@@ -55,10 +55,11 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
             <input type="number" name="cantidad">
             <input type="submit" name="operacion" value="Enviar">
         </form>
-    <?php
+        <?php
     } else {
         $cantidad = $_GET['cantidad'];
         echo "<h3>Hay que hacer $cantidad filas </h3>";
+        echo "<form method='get' action='#'>";
         echo "<table border = '1'>";
         echo "<form action='#'>";
         for ($i = -1; $i < $cantidad; $i++) {
@@ -79,13 +80,17 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
                     echo "<td><input type='text' name='altura.$i' placeholder='altura'></td>";
                 }
             }
-            "</tr>";
+            echo "</tr>";
         }
         /* echo "<input type='submit' name='operation' value='introducir'>"; */
         echo "</form>";
         echo "</table> <br>";
+        echo "<input type='submit' name='enviar' value='Enviar'>";
+        echo "<input type='hidden' name='cantidad' value='$cantidad'>";
+        echo "</form>";
 
 
+<<<<<<< HEAD
         /* if (isset($_GET['nombre$i'])) {
             $nombre = array_fill(0, nombre, 'nombre');
         var_dump($nombre);
@@ -94,10 +99,31 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
         <form method="get" action="#">
             <input type="submit" name="enviar" value="Enviar">
         </form>
+=======
+        //--------------------------------------------------------------------------------------------------------------------
+        if (isset($_GET['nombre0'])) {
+            for ($i = 0; $i < $cantidad; $i++) {
+                $arrayPersona[$i] = ['nombre' => $_GET['nombre' . $i], 'email' => $_GET['email' . $i], 'altura' => $_GET['altura.$i']];
+            }
+            foreach ($arrayPersonas as $individuo) {
+                /*   echo $individuo['nombre']; 
+                echo $individuo['email'];
+                echo $individuo['altura']; 
+                Esto sería adecuado si sabes exactemente los campos, lo ideal es un foreach dentro de otro para que recorriera el array y el otro array
+                */
+
+                foreach ($individuo as $dato => $info) {
+                    echo $dato; //muestra el dato 
+                }
+            }
+        } else {
+        ?>
+>>>>>>> 8371110a4ed26d65b8dd93c69eac9bbdbf0ccccb
     <?php
+        }
     }
     ?>
-    }
+
 </body>
 
 </html>
