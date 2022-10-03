@@ -81,7 +81,7 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
             echo "</tr>";
         }
         echo "</table> <br>";
-        //---------------------------
+        //-------------------------------------------------------------------------------------------------------------
         if (isset($_GET['nombre0'])) {
             for ($i = 0; $i < $cantidad; $i++) {
                 $arrayPersona[$i] = [['nombre' => $_GET['nombre' . $i], 'email' => $_GET['email' . $i], 'altura' => $_GET['altura.$i']]];
