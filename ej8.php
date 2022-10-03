@@ -59,6 +59,7 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
     } else {
         $cantidad = $_GET['cantidad'];
         echo "<h3>Hay que hacer $cantidad filas </h3>";
+        echo "<form method='get' action='#'>";
         echo "<table border = '1'>";
         for ($i = -1; $i < $cantidad; $i++) {
             echo "<tr>";
@@ -81,17 +82,29 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
             echo "</tr>";
         }
         echo "</table> <br>";
-        //-------------------------------------------------------------------------------------------------------------
+        echo "<input type='submit' name='enviar' value='Enviar'>";
+        echo "<input type='hidden' name='cantidad' value='$cantidad'>";
+        echo "</form>";
+
+
+        //--------------------------------------------------------------------------------------------------------------------
         if (isset($_GET['nombre0'])) {
             for ($i = 0; $i < $cantidad; $i++) {
-                $arrayPersona[$i] = [['nombre' => $_GET['nombre' . $i], 'email' => $_GET['email' . $i], 'altura' => $_GET['altura.$i']]];
+                $arrayPersona[$i] = ['nombre' => $_GET['nombre' . $i], 'email' => $_GET['email' . $i], 'altura' => $_GET['altura.$i']];
+            }
+            foreach ($arrayPersonas as $individuo) {
+                /*   echo $individuo['nombre']; 
+                echo $individuo['email'];
+                echo $individuo['altura']; 
+                Esto sería adecuado si sabes exactemente los campos, lo ideal es un foreach dentro de otro para que recorriera el array y el otro array
+                */
+
+                foreach ($individuo as $dato => $info) {
+                    echo $dato; //muestra el dato 
+                }
             }
         } else {
-
         ?>
-            <form method="get" action="#">
-                <input type="submit" name="enviar" vaslue="Enviar">
-            </form>
     <?php
         }
     }
