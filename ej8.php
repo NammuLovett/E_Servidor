@@ -49,13 +49,13 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
     <h3>¿Cuántas personas quieres introducir ? </h3>
 
     <?php
-    if ((!isset($_GET['cantidad']))) {
+    if ((!isset($_GET['cantidad']))) { //Si la variable cantidad está vacío saco el formulario básico para sacar inputs
     ?>
         <form method="get" action="#">
             <input type="number" name="cantidad">
             <input type="submit" name="operacion" value="Enviar">
         </form>
-        <?php
+    <?php
     } else {
         $cantidad = $_GET['cantidad'];
         echo "<h3>Hay que hacer $cantidad filas </h3>";
@@ -82,29 +82,19 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
             }
             echo "</tr>";
         }
-        /* echo "<input type='submit' name='operation' value='introducir'>"; */
         echo "</form>";
         echo "</table> <br>";
         echo "<input type='submit' name='enviar' value='Enviar'>";
         echo "<input type='hidden' name='cantidad' value='$cantidad'>";
         echo "</form>";
 
-
-<<<<<<< HEAD
-        /* if (isset($_GET['nombre$i'])) {
-            $nombre = array_fill(0, nombre, 'nombre');
-        var_dump($nombre);
-    } else { */
-    ?>
-        <form method="get" action="#">
-            <input type="submit" name="enviar" value="Enviar">
-        </form>
-=======
+        //Mostrar resultados 
         //--------------------------------------------------------------------------------------------------------------------
-        if (isset($_GET['nombre0'])) {
+        if (isset($_GET['nombre0'])) { //Si el campo 0,0 está lleno, guarda los datos en el array.
             for ($i = 0; $i < $cantidad; $i++) {
                 $arrayPersona[$i] = ['nombre' => $_GET['nombre' . $i], 'email' => $_GET['email' . $i], 'altura' => $_GET['altura.$i']];
             }
+
             foreach ($arrayPersonas as $individuo) {
                 /*   echo $individuo['nombre']; 
                 echo $individuo['email'];
@@ -116,14 +106,9 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
                     echo $dato; //muestra el dato 
                 }
             }
-        } else {
-        ?>
->>>>>>> 8371110a4ed26d65b8dd93c69eac9bbdbf0ccccb
-    <?php
         }
     }
     ?>
-
 </body>
 
 </html>
