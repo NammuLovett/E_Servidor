@@ -49,65 +49,77 @@ A partir de las personas introducidas, mostrar sus datos en una tabla, y posteri
     <h3>¿Cuántas personas quieres introducir ? </h3>
 
     <?php
-    if ((!isset($_GET['cantidad']))) { //Si la variable cantidad está vacío saco el formulario básico para sacar inputs
+    if ((empty($_GET['cantidad']))) { // Si está vacío, muestra el formulario
     ?>
         <form method="get" action="#">
             <input type="number" name="cantidad">
             <input type="submit" name="operacion" value="Enviar">
         </form>
     <?php
-    } else {
+    } else { //si está relleno el formulario, bucle input con la cantidad 
         $cantidad = $_GET['cantidad'];
-        echo "<h3>Hay que hacer $cantidad filas </h3>";
-        echo "<form method='get' action='#'>";
-        echo "<table border = '1'>";
-        echo "<form action='#'>";
-        for ($i = -1; $i < $cantidad; $i++) {
-            echo "<tr>";
-            for ($j = -1; $j < 2; $j++) {
-                if ($i == -1 && $j == -1) { //En la casilla j e i -1 pone nombre
-                    echo "<th>Nombre</th>";
-                } elseif ($i == -1 && $j == 0) { //En la casilla j 0 e i -1 pone email
-                    echo "<th>Email</th>";
-                } elseif ($i == -1 && $j == 1) { //En la casilla j -1 e i -1 pone email
-                    echo "<th>Altura</th>";
-                    //inputs nombre / email / altura
-                } elseif ($j == -1) {
-                    echo "<td><input type='text' name='nombre.$i' placeholder='nombre'></td>";
-                } elseif ($j == 0) {
-                    echo "<td><input type='text' name='email.$i' placeholder='email'></td>";
-                } elseif ($j == 1) {
-                    echo "<td><input type='text' name='altura.$i' placeholder='altura'></td>";
-                }
-            }
-            echo "</tr>";
-        }
-        echo "</form>";
-        echo "</table> <br>";
-        echo "<input type='submit' name='enviar' value='Enviar'>";
-        echo "<input type='hidden' name='cantidad' value='$cantidad'>";
-        echo "</form>";
-
-        //Mostrar resultados 
-        //--------------------------------------------------------------------------------------------------------------------
-        if (isset($_GET['nombre0'])) { //Si el campo 0,0 está lleno, guarda los datos en el array.
+        if (!isset($_GET['nombre0'])) { //2 tabla, si el primer valor está vacío muestro la tabla para rellenarlo
+            echo "<h3>Hay que hacer $cantidad filas </h3>";
+            echo "<form method='get' action='#'>";
+            echo "<table border = '1'>";
+            echo "<tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Altura</th>
+        </tr>";
+            echo "<form action='#' method='get'>";
             for ($i = 0; $i < $cantidad; $i++) {
-                $arrayPersona[$i] = ['nombre' => $_GET['nombre' . $i], 'email' => $_GET['email' . $i], 'altura' => $_GET['altura.$i']];
+                echo "<tr>";
+                for ($j = 0; $j < 3; $j++) {
+                    if ($j == 0) {
+                        echo "<td><input type='text' name='nombre" . $i . "' placeholder='nombre'></td>";
+                    } elseif ($j == 1) {
+                        echo "<td><input type='text' name='email" . $i . "' placeholder='email'></td>";
+                    } elseif ($j == 2) {
+                        echo "<td><input type='text' name='altura" . $i . "' placeholder='altura'></td>";
+                    }
+                }
+                echo "</tr>";
             }
+            echo "</table> <br>"; //Cierra tabla gen inputs
 
-            foreach ($arrayPersonas as $individuo) {
-                /*   echo $individuo['nombre']; 
+            echo "<input type='submit' name='enviar' value='Enviar'>";
+            echo "<input type='hidden' name='cantidad' value='$cantidad'>";
+            echo "</form>";
+
+            //Guardar los datos de la tabla en un array
+            //--------------------------------------------------------------------------------------------------------------------
+        } else { //Si el campo 0,0 está lleno, guarda los datos en el array.
+            for ($i = 0; $i < $cantidad; $i++) {
+                $arrayPersona[$i] = ['nombre' => $_GET['nombre' . $i], 'email' => $_GET['email' . $i], 'altura' => $_GET['altura' . $i]];
+            }
+            //Y Mostrar resultados de la tabla
+            echo "<table>";
+            echo "<tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Altura</th>
+            </tr>";
+
+            foreach ($arrayPersona as $individuo) { //Recorre el array pral
+                /* echo $individuo['nombre']; 
                 echo $individuo['email'];
                 echo $individuo['altura']; 
-                Esto sería adecuado si sabes exactemente los campos, lo ideal es un foreach dentro de otro para que recorriera el array y el otro array
-                */
+                Esto sería adecuado si sabes exactemente los campos, lo ideal es un foreach dentro de otro para que recorriera el array y el otro array */
 
-                foreach ($individuo as $dato => $info) {
-                    echo $dato; //muestra el dato 
+                echo "<tr>";
+
+                foreach ($individuo as $dato => $info) { //Recorre el array de dentro (nombre/email/altura) y lo muestra con el dato del campo ($info)
+                    // echo $dato; muestra el dato 
+                    echo "<td>$info</td>";
                 }
+                echo "</tr>";
             }
+            echo "</table>";
         }
     }
+
+
     ?>
 </body>
 
