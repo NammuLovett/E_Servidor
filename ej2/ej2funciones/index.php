@@ -3,12 +3,16 @@
 include_once "funciones.php";
 
 if (isset($_GET['cantidad'])) {
-    suma($cantidad);
-} elseif (isset($_GET['cantidad'])) {
-    crearFormulario($cantidad);
-} else {
+    $cantidad = $_GET['cantidad'];
+
+    if (isset($_GET['sumar'])) {
+        suma($cantidad);
+    } else {
+        crearFormulario($cantidad);
+    }
+} else { //primer formulario si no hay datos, recojo cantidad
     echo '<form action="#" method="get">
-    <p><label for="variables">Determina cuántas variables quieres sumar</label>
+    <p><label for="variables">Determina cuántas inputs quieres sumar</label>
     <p>  <input type="number" name="cantidad" />
     <input type="submit" name="enviar" value="Enviar" />
 </form>';
