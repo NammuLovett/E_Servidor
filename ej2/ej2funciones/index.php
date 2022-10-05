@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+include_once "funciones.php";
 
-<body>
-    <?php
-    require 'funciones.php';
-
-    ?>
-</body>
-
-</html>
+if (isset($_GET['cantidad'])) {
+    suma($cantidad);
+} elseif (isset($_GET['cantidad'])) {
+    crearFormulario($cantidad);
+} else {
+    echo '<form action="#" method="get">
+    <p><label for="variables">Determina cuántas variables quieres sumar</label>
+    <p>  <input type="number" name="cantidad" />
+    <input type="submit" name="enviar" value="Enviar" />
+</form>';
+}
