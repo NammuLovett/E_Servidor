@@ -54,7 +54,7 @@
             } elseif ($i == -1) {
                 echo "<th>$j</th>";
             } else {
-                echo "<td>", ($i) * ($j), "</td>";
+                echo "<td>" . ($i) * ($j) . "</td>";
             }
         }
         "</tr>";

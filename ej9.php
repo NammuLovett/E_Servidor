@@ -1,22 +1,3 @@
-<!-- Rellena un array bidimensional de 6 filas por 9 columnas con números aleatorios comprendidos entre 100 y 999 (ambos incluidos). Todos los números deben ser distintos, es decir, no se puede repetir ninguno.
-Muestra a continuación por pantalla el contenido del array de tal forma que:
-La columna del máximo debe aparecer en azul.
-La fila del mínimo debe aparecer en verde
-El resto de números deben aparecer en negro. 
-
-Array Random - 100 & 999 - No se pueden repetir
-0 0 0 0 0 0 AZUL
-0 0 0 0 0 0 N
-0 0 0 0 0 0 N
-0 0 0 0 0 0 N
-0 0 0 0 0 0 N
-0 0 0 0 0 0 N
-0 0 0 0 0 0 N
-0 0 0 0 0 0 N
-0 0 0 0 0 0 VERDE
--->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,24 +5,60 @@ Array Random - 100 & 999 - No se pueden repetir
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Matriz de numeros aleatorios</title>
 </head>
 
 <body>
-
     <?php
+    const FILAS = 6;
+    const COLUMNAS = 9;
+    for ($i = 0; $i < FILAS * COLUMNAS; $i++) {
+        $num[$i] = rand(100, 999);
+        for ($j = 0; $j < $i; $j++) {
+            while ($num[$i] == $num[$j]) {
+                $num[$i] = rand(100, 999);
+                $j = 0;
+            }
+        }
+    }
 
-    $numbers = range(100, 999); //Ponemos le rango de números dado por el ejercicio
-    shuffle($numbers); // Sacamos al azar los números
+    $mayor = $num[0];
+    $menor = $num[0];
+    $columnaMayor = 0;
+    $filaMenor = 0;
+    $k = 0;
+    for ($i = 0; $i < FILAS; $i++) {
+        for ($j = 0; $j < COLUMNAS; $j++) {
+            $numBi[$i][$j] = $num[$k];
+            if ($numBi[$i][$j] < $menor) {
+                $menor = $numBi[$i][$j];
+                $filaMenor = $i;
+            } else if ($numBi[$i][$j] > $mayor) {
+                $mayor = $numBi[$i][$j];
+                $columnaMayor = $j;
+            }
+            $k++;
+        }
+    }
 
-    $numbers = array_slice($numbers, 0, 53); // Sacamos un array de 54 números para rellenar el array bidimensional
-
-
-    print_r($numbers);
-
+    echo "<table border=1>";
+    for ($i = 0; $i < FILAS; $i++) {
+        echo "<tr>";
+        for ($j = 0; $j < COLUMNAS; $j++) {
+            if ($i == $filaMenor && $j == $columnaMayor) {
+                echo "<td style='background-color: aquamarine;'>" . $numBi[$i][$j] . "</td>";
+            } else if ($j == $columnaMayor) {
+                echo "<td style='background-color: green;'>" . $numBi[$i][$j] . "</td>";
+            } else if ($i == $filaMenor) {
+                echo "<td style='background-color: blue;'>" . $numBi[$i][$j] . "</td>";
+            } else {
+                echo "<td>" . $numBi[$i][$j] . "</td>";
+            }
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
     ?>
-
-
 </body>
 
 </html>
