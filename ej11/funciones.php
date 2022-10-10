@@ -28,7 +28,7 @@ function comprobarNumPar(int $num)
 
 function arrayAleatorio(int $tam, int $min, int $max)
 {
-    if ($max < $tam) {
+    if ($tam > ($max - $min)) {
         for ($i = 0; $i < $tam; $i++) {
             $randomNumber[$i] = rand($min, $max);
         }
@@ -48,5 +48,5 @@ function arrayAleatorio(int $tam, int $min, int $max)
     }
 }
 
-var_dump(arrayAleatorio(10, 1, 9))
+var_dump(arrayAleatorio(10, 1, 3))
 ?>
