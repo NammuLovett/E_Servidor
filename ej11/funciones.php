@@ -1,6 +1,6 @@
 <!-- Crea las siguientes funciones:
 
-Una función que devuelva un array de tamaño $tam con números aleatorios comprendido entre $min y $max : arrayAleatorio(int $tam, int $min, int $max) : array
+
 
 Una función que reciba un $array por referencia y devuelva la cantidad de números pares que hay almacenados: arrayPares(array &$array): int 
 
@@ -23,9 +23,24 @@ function comprobarNumPar(int $num)
         echo "Es Impar";
     }
 }
+/* comprobarNumPar(42); */
+/* Una función que devuelva un array de tamaño $tam con números aleatorios comprendido entre $min y $max : arrayAleatorio(int $tam, int $min, int $max) : array */
 
 function arrayAleatorio(int $tam, int $min, int $max)
 {
-    $randomNumber = rand($min, $max);
+
+    for ($i = 0; $i < $tam; $i++) {
+        $randomNumber[$i] = rand($min, $max);
+
+        for ($j = 0; $j < $i; $j++) {
+            while ($randomNumber[$i] == $randomNumber[$j]) {
+                $num[$j] = rand($min, $max);
+                $j = 0;
+            }
+        }
+    }
+    return $randomNumber;
 }
+
+var_dump(arrayAleatorio(10, 1, 5))
 ?>

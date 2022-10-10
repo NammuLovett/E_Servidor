@@ -7,4 +7,4 @@ function randomGen($min = 100, $max = 999, $quantity = 54)
     return array_slice($numbers, 0, $quantity);
 }
 
-print_r(randomGen()); //generates 20 unique random numbers
+/* print_r(randomGen()); */ //generates 20 unique random numbers

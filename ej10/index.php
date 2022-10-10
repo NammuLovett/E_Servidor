@@ -18,9 +18,10 @@ const FILAS = 6;
 const COLUM = 9;
 $k = 0;
 
-for ($i = 0; $i < COLUM; $i++) {
-    for ($j = 0; $j < $FILAS; $j++) {
+for ($i = 0; $i < FILAS; $i++) {
+    for ($j = 0; $j < COLUM; $j++) {
         $arrBi[$i][$j] = $arrayRandom[$k];
+        $k++;
     }
 }
 
