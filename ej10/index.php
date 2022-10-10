@@ -9,7 +9,6 @@ Muestra a continuación por pantalla el contenido del array de tal forma que:
 
 include_once "funciones.php";
 
-$arrayRandom = [];
 $arrayRandom = randomGen();
 
 /* var_dump($arrayRandom); */
@@ -17,10 +16,11 @@ $arrayRandom = randomGen();
 
 const FILAS = 6;
 const COLUM = 9;
+$k = 0;
 
 for ($i = 0; $i < COLUM; $i++) {
     for ($j = 0; $j < $FILAS; $j++) {
-        $arrBi[$i][$j] = $arrayRandom;
+        $arrBi[$i][$j] = $arrayRandom[$k];
     }
 }
 
