@@ -28,19 +28,25 @@ function comprobarNumPar(int $num)
 
 function arrayAleatorio(int $tam, int $min, int $max)
 {
+    if ($max < $tam) {
+        for ($i = 0; $i < $tam; $i++) {
+            $randomNumber[$i] = rand($min, $max);
+        }
+        return $randomNumber;
+    } else {
+        for ($i = 0; $i < $tam; $i++) {
+            $randomNumber[$i] = rand($min, $max);
 
-    for ($i = 0; $i < $tam; $i++) {
-        $randomNumber[$i] = rand($min, $max);
-
-        for ($j = 0; $j < $i; $j++) {
-            while ($randomNumber[$i] == $randomNumber[$j]) {
-                $num[$j] = rand($min, $max);
-                $j = 0;
+            for ($j = 0; $j < $i; $j++) {
+                while ($randomNumber[$i] == $randomNumber[$j]) {
+                    $num[$j] = rand($min, $max);
+                    $j = 0;
+                }
             }
         }
+        return $randomNumber;
     }
-    return $randomNumber;
 }
 
-var_dump(arrayAleatorio(10, 1, 5))
+var_dump(arrayAleatorio(10, 1, 9))
 ?>
