@@ -106,4 +106,15 @@ function obtMenor()
 
 /* Crea una función que concatene todos los parámetros recibidos separándolos con un espacio: function concatenar(...$palabras) : string. Utiliza el operador .... */
 
+function concatenar(...$palabras)
+{
+    $palabra = "";
+    for ($i = 0; $i < count($palabras); $i++) {
+        /* $palabra .=  $palabras[$i] . " "; */
+        $palabra =  $palabra . " " . $palabras[$i];
+    }
+
+    return $palabra;
+}
+/* echo concatenar("hola", "me", "llamo", "pluto"); */
 ?>
