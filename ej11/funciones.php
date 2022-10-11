@@ -1,7 +1,7 @@
 <!-- Crea las siguientes funciones:
 
 
-Crea una función que concatene todos los parámetros recibidos separándolos con un espacio: function concatenar(...$palabras) : string. Utiliza el operador ....
+
 
 digitos(int $num): int → devuelve la cantidad de dígitos de un número.
 digitoN(int $num, int $pos): int → devuelve el dígito que ocupa, empezando por la izquierda, la posición $pos.
@@ -64,10 +64,46 @@ function ArrayPares(&$arrPares)
     }
     echo "Hay $pares números pares";
 }
-$arrPrueba = [2, 3, 5, 6, 90, 3, 90, 325, 120, 32153];
-ArrayPares($arrPrueba);
+/* $arrPrueba = [2, 3, 5, 6, 90, 3, 90, 325, 120, 32153];
+ArrayPares($arrPrueba); */
 
 /* Crea una función que devuelva el mayor de todos los números recibidos como parámetros: function mayor(): int. Utiliza las funciones func_get_args(), etc... No puedes usar la función max(). */
 
+function obtMayor()
+{
+    if (func_num_args() == 0) {
+        return false;
+    } else {
+        $mayor =  func_get_arg(0);
+        for ($i = 0; $i < func_num_args(); $i++) {
+            if (func_get_arg($i) > $mayor) {
+                $mayor =  func_get_arg($i);
+            }
+        }
+        return $mayor;
+    }
+}
+
+/* echo "El número mayor es " . obtMayor(3, 5, 345, 34, 67, 56, 8, 4, 2, 456, 56, 2, 345324, 999999); */
+
+function obtMenor()
+{
+    if (func_num_args() == 0) {
+        return false;
+    } else {
+        $menor =  func_get_arg(0);
+        for ($i = 0; $i < func_num_args(); $i++) {
+            if (func_get_arg($i) < $menor) {
+                $menor = func_get_arg($i);
+            }
+        }
+        return $menor;
+    }
+}
+/* echo "El número menor es " . obtMenor(3, 5, 345, 34, 67, 56, 8, 4, 2, 456, 56, 2, 345324, 999999); */
+
+/* -------------------------------------------------------------- */
+
+/* Crea una función que concatene todos los parámetros recibidos separándolos con un espacio: function concatenar(...$palabras) : string. Utiliza el operador .... */
 
 ?>
