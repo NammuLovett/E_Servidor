@@ -10,18 +10,19 @@ Muestra a continuación por pantalla el contenido del array de tal forma que:
 include_once "funciones.php";
 
 $arrayRandom = randomGen();
-
-/* var_dump($arrayRandom); */
+//Creamos una variable con la función que hemos creado.
+/* var_dump($arrayRandom); // Testeo datos*/
 
 
 const FILAS = 6;
 const COLUM = 9;
 $k = 0;
 
-for ($i = 0; $i < COLUM; $i++) {
-    for ($j = 0; $j < $FILAS; $j++) {
+for ($i = 0; $i < FILAS; $i++) {
+    for ($j = 0; $j < $COLUM; $j++) {
         $arrBi[$i][$j] = $arrayRandom[$k];
+        $k++;
     }
 }
-
+//Se ha creado el array bidimensional   
 var_dump($arrBi);
