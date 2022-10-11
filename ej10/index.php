@@ -19,13 +19,14 @@ const COLUM = 9;
 $k = 0;
 
 for ($i = 0; $i < FILAS; $i++) {
-<<<<<<< HEAD
+
     for ($j = 0; $j < $COLUM; $j++) {
-=======
-    for ($j = 0; $j < COLUM; $j++) {
->>>>>>> 2f0c3cf66ff5103135c3a4997bfd834fc0ead959
-        $arrBi[$i][$j] = $arrayRandom[$k];
-        $k++;
+
+        for ($j = 0; $j < COLUM; $j++) {
+
+            $arrBi[$i][$j] = $arrayRandom[$k];
+            $k++;
+        }
     }
 }
 //Se ha creado el array bidimensional   
