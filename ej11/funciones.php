@@ -1,10 +1,6 @@
 <!-- Crea las siguientes funciones:
 
 
-
-Una función que reciba un $array por referencia y devuelva la cantidad de números pares que hay almacenados: arrayPares(array &$array): int 
-
-Crea una función que devuelva el mayor de todos los números recibidos como parámetros: function mayor(): int. Utiliza las funciones func_get_args(), etc... No puedes usar la función max().
 Crea una función que concatene todos los parámetros recibidos separándolos con un espacio: function concatenar(...$palabras) : string. Utiliza el operador ....
 
 digitos(int $num): int → devuelve la cantidad de dígitos de un número.
@@ -48,5 +44,30 @@ function arrayAleatorio(int $tam, int $min, int $max)
     }
 }
 
-var_dump(arrayAleatorio(10, 1, 3))
+/* var_dump(arrayAleatorio(10, 1, 99)) */
+
+/* Una función que reciba un $array por referencia y devuelva la cantidad de números pares que hay almacenados: arrayPares(array &$array): int  */
+
+
+function ArrayPares(&$arrPares)
+{
+    if (func_num_args() == 0) {
+        return false;
+    } else {
+        $pares = 0;
+
+        for ($i = 0; $i < count($arrPares); $i++) {
+            if ($arrPares[$i] % 2 == 0) {
+                $pares++;
+            }
+        }
+    }
+    echo "Hay $pares números pares";
+}
+$arrPrueba = [2, 3, 5, 6, 90, 3, 90, 325, 120, 32153];
+ArrayPares($arrPrueba);
+
+/* Crea una función que devuelva el mayor de todos los números recibidos como parámetros: function mayor(): int. Utiliza las funciones func_get_args(), etc... No puedes usar la función max(). */
+
+
 ?>
