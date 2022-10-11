@@ -1,14 +1,4 @@
-<!-- Crea las siguientes funciones:
-
-
-
-
-digitos(int $num): int → devuelve la cantidad de dígitos de un número.
-digitoN(int $num, int $pos): int → devuelve el dígito que ocupa, empezando por la izquierda, la posición $pos.
-quitaPorDetras(int $num, int $cant): int → le quita por detrás (derecha) $cant dígitos.
-quitaPorDelante(int $num, int $cant): int → le quita por delante (izquierda) $cant dígitos.
-
--->
+<!-- Crea las siguientes funciones:-->
 <?php
 
 function comprobarNumPar(int $num)
@@ -62,10 +52,10 @@ function ArrayPares(&$arrPares)
             }
         }
     }
-    echo "Hay $pares números pares";
+    return $pares;
 }
 /* $arrPrueba = [2, 3, 5, 6, 90, 3, 90, 325, 120, 32153];
-ArrayPares($arrPrueba); */
+echo ArrayPares($arrPrueba); */
 
 /* Crea una función que devuelva el mayor de todos los números recibidos como parámetros: function mayor(): int. Utiliza las funciones func_get_args(), etc... No puedes usar la función max(). */
 
@@ -117,4 +107,76 @@ function concatenar(...$palabras)
     return $palabra;
 }
 /* echo concatenar("hola", "me", "llamo", "pluto"); */
+
+/* -------------------------------------------------------------- */
+
+/* digitos(int $num): int → devuelve la cantidad de dígitos de un número. */
+function cuentaDigitos(int $num): int
+{
+    $contador = 0;
+    while ($num > 1) {
+        $num /= 10;
+        $contador++;
+    }
+    return $contador;
+}
+
+/* var_dump(cuentaDigitos(123456789)); */
+/* echo cuentaDigitos(123456789); */
+
+/*---------------------------------------------------------------------------*/
+
+/* digitoN(int $num, int $pos): int → devuelve el dígito que ocupa, empezando por la izquierda, la posición $pos. (20,0) = 2*/
+
+function voltear(int $num): int
+{
+
+    $volteado = 0;
+    while ($num >= 1) {
+        $volteado = $volteado * 10 + ($num % 10);
+        $num /= 10;
+    }
+
+    return $volteado;
+}
+
+function digitoN(int $num, int $pos): int
+{
+    $volteado = voltear($num);
+    for ($i = 0; $i < $pos; $i++) {
+        $volteado /= 10;
+    }
+    return $volteado % 10;
+}
+
+/* echo digitoN(12345, 3) */
+
+/* -------------------------------------------------------------- */
+/* quitaPorDetras(int $num, int $cant): int → le quita por detrás (derecha) $cant dígitos.*/
+
+function quitaPorDetras(int $num, int $cant): int
+{
+    for ($i = 0; $i < $cant; $i++) {
+        $num /= 10;
+    }
+    return $num;
+}
+/* echo quitaPorDetras(12345, 3); */
+
+/*-------------------------------------------------------------- */
+
+
+/* quitaPorDelante(int $num, int $cant): int → le quita por delante (izquierda) $cant dígitos.
+ */
+function quitaPorDelante(int $num, int $cant): int
+{
+
+    $volteado = voltear($num);
+
+    $volteado = quitaPorDetras($volteado, $cant);
+
+    return voltear($volteado);
+}
+
+/* echo quitaPorDelante(12345, 2); */
 ?>
