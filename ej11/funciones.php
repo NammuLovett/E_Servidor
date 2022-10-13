@@ -3,11 +3,7 @@
 
 function comprobarNumPar(int $num)
 {
-    if ($num % 2 == 0) {
-        echo "Es Par";
-    } else {
-        echo "Es Impar";
-    }
+    return ($num % 2 == 0);
 }
 /* comprobarNumPar(42); */
 /* Una función que devuelva un array de tamaño $tam con números aleatorios comprendido entre $min y $max : arrayAleatorio(int $tam, int $min, int $max) : array */

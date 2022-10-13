@@ -27,6 +27,7 @@
     $columnaMayor = 0;
     $filaMenor = 0;
     $k = 0;
+
     for ($i = 0; $i < FILAS; $i++) {
         for ($j = 0; $j < COLUMNAS; $j++) {
             $numBi[$i][$j] = $num[$k];
