@@ -20,7 +20,7 @@ $k = 0;
 
 for ($i = 0; $i < FILAS; $i++) {
 
-    for ($j = 0; $j < $COLUM; $j++) {
+    for ($j = 0; $j < COLUM; $j++) {
 
         for ($j = 0; $j < COLUM; $j++) {
 
