@@ -20,12 +20,12 @@ Muestra a continuación por pantalla el contenido del array de tal forma que:
 
     for ($i = 0; $i < FILAS; $i++) {
         for ($j = 0; $j < COLUM; $j++) {
-            $arrBi[$i][$j] = $arrayRandom[$k];
+            $numBi[$i][$j] = $arrayRandom[$k];
             $k++;
         }
     }
-    //Se ha creado el array bidimensional   
-    var_dump($arrBi);
+    //Se ha creado el array bidimensional a partir del array simple 
+   /*  var_dump($numBi); */
 
 
     $mayor = $num[0];

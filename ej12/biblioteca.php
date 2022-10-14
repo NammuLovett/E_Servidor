@@ -6,7 +6,7 @@
 
 -->
 <?php
-function suma()
+function sumar()
 {
 
     if (func_num_args() == 0) {
@@ -19,49 +19,49 @@ function suma()
         return $suma;
     }
 }
-/* echo suma(1, 1, 1, 1, 1, 1, 1, 1, 1, 1); */
+/* echo sumar(1, 1, 1, 1, 1, 1, 1, 1, 1, 1); */
 
-function resta()
+function restar()
 {
 
     if (func_num_args() == 0) {
         return false;
     } else {
-        $suma = 0;
-        for ($i = 0; $i < func_num_args(); $i++) {
-            $suma -= func_get_arg($i);
+        $resta = func_get_arg(0);
+        for ($i = 1; $i < func_num_args(); $i++) {
+            $resta -= func_get_arg($i);
         }
-        return $suma;
+        return $resta;
     }
 }
 /* echo suma(10, -1, -1, -1, -1, -1); */
-function multip()
+function multiplicar()
 {
 
     if (func_num_args() == 0) {
         return false;
     } else {
-        $suma = 1;
+        $mult = 1;
         for ($i = 0; $i < func_num_args(); $i++) {
-            $suma *= func_get_arg($i);
+            $mult *= func_get_arg($i);
         }
-        return $suma;
+        return $mult;
     }
 }
 
 /* echo multip(2, 3, 1, 1); */
 
-function division()
+function dividir()
 {
 
     if (func_num_args() == 0) {
         return false;
     } else {
-        $suma = func_get_arg(0);
+        $divis = func_get_arg(0);
         for ($i = 1; $i < func_num_args(); $i++) {
-            $suma /= func_get_arg($i);
+            $divis /= func_get_arg($i);
         }
-        return $suma;
+        return $divis;
     }
 }
 /* echo division(20, 2, 2, 2); */
