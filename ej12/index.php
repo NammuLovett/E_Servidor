@@ -13,7 +13,7 @@ include_once('biblioteca.php');
 
 <body>
     <form action="#" method="get">
-        <label for="lista1">Operación</label>
+        <label for="lista1">Tipo de operación</label>
         <select name="operacion" id="lista1">
             <option value="" selected disabled hidden>Seleccione una opción</option>
             <option type="select" name="operacion" value="sumar">sumar <br>
@@ -28,9 +28,10 @@ include_once('biblioteca.php');
         <input type="submit" name="enviar" value="Enviar">
 
     </form>
+
     <?php
     if (isset($_GET['enviar'])) {
-        echo "<p>Resultado:  </p>" . $_GET['operacion']($_GET['num1'], $_GET['num2']);
+        echo "<br> Resultado: " . $_GET['operacion']($_GET['num1'], $_GET['num2']);
     }
 
     ?>
