@@ -126,7 +126,6 @@ function cuentaDigitos(int $num): int
 
 function voltear(int $num): int
 {
-
     $volteado = 0;
     while ($num >= 1) {
         $volteado = $volteado * 10 + ($num % 10);
@@ -145,7 +144,7 @@ function digitoN(int $num, int $pos): int
     return $volteado % 10;
 }
 
-/* echo digitoN(12345, 3) */
+/* echo digitoN(9876, 3) */
 
 /* -------------------------------------------------------------- */
 /* quitaPorDetras(int $num, int $cant): int → le quita por detrás (derecha) $cant dígitos.*/
@@ -157,7 +156,7 @@ function quitaPorDetras(int $num, int $cant): int
     }
     return $num;
 }
-/* echo quitaPorDetras(12345, 3); */
+/* echo quitaPorDetras(9583, 3); */
 
 /*-------------------------------------------------------------- */
 
@@ -174,5 +173,5 @@ function quitaPorDelante(int $num, int $cant): int
     return voltear($volteado);
 }
 
-/* echo quitaPorDelante(12345, 2); */
+/* echo quitaPorDelante(9678, 2); */
 ?>
