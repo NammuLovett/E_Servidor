@@ -57,7 +57,7 @@
     <?php
     } else { //si está relleno el formulario, bucle input con la cantidad 
         $cantidad = $_GET['cantidad'];
-        if (!isset($_GET['matricula0'])) { //2 tabla, si el primer valor está vacío muestro la tabla para rellenarlo
+        if (!isset($_GET['matricula0'])) { // tabla, si el primer valor está vacío muestro la tabla para rellenarlo
             echo "<h3>Hay que hacer $cantidad filas </h3>";
             echo "<form method='get' action='#'>";
             echo "<table border = '1'>";
@@ -101,14 +101,12 @@
             </tr>";
 
             foreach ($arrayCoche as $coche) { //Recorre el array pral
-                /* echo $individuo['nombre']; 
-                echo $individuo['email'];
-                echo $individuo['altura']; 
+                /* 
                 Esto sería adecuado si sabes exactemente los campos, lo ideal es un foreach dentro de otro para que recorriera el array y el otro array */
 
                 echo "<tr>";
 
-                foreach ($coche as $dato => $info) { //Recorre el array de dentro (nombre/email/altura) y lo muestra con el dato del campo ($info)
+                foreach ($coche as $dato => $info) { //Recorre el array de dentro (matricula/marca/modelo) y lo muestra con el dato del campo ($info)
                     // echo $dato; muestra el dato 
                     echo "<td>$info</td>";
                 }
