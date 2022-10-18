@@ -16,11 +16,9 @@ function crearFormulario($cantidad)
 
 function invertir($val)
 {
-    $j = 0;
     for ($i = count($val); $i >= 0; $i--) {
 
-        $aux[$j] = $val[$i];
-        $j++;
+        $aux[] = $val[$i];
     }
     return $aux;
 }
