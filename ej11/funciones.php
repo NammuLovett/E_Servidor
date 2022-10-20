@@ -174,4 +174,3 @@ function quitaPorDelante(int $num, int $cant): int
 }
 
 /* echo quitaPorDelante(9678, 2); */
-?>

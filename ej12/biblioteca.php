@@ -65,5 +65,3 @@ function dividir()
     }
 }
 /* echo division(20, 2, 2, 2); */
-
-?>
