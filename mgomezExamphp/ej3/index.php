@@ -42,22 +42,21 @@
 </head>
 
 <body>
-    <!-- A partir de un formulario con un campo de cantidad de vehículos, generar un nuevo formulario para leer el input del vehículo.
--->
+    -->
 
     <h3>¿Cuántos alumnos quieres introducir ? </h3>
 
     <?php
-    include_once "funciones.php";
+    include_once 'funciones.php';
 
-    if ((empty($_GET['cantidad']))) { // Si está vacío, muestra el formulario
+    if (empty($_GET['cantidad'])) { // Si está vacío, muestra el formulario
     ?>
         <form method="get" action="#">
             <input type="number" name="cantidad">
             <input type="submit" name="operacion" value="Enviar">
         </form>
     <?php
-    } else { //si está relleno el formulario cantidad, bucle input con la cantidad 
+    } else { //si está relleno el formulario cantidad, bucle input con la cantidad
         $cantidad = $_GET['cantidad'];
         if (!isset($_GET['name0'])) { // tabla, si el primer valor está vacío muestro la tabla para rellenarlo
             echo "<h3>Hay que hacer $cantidad filas </h3>";
@@ -89,7 +88,7 @@
             echo "</form>";
 
             //Guardar los datos de la tabla en un array
-            //--------------------------------------------------------------------------------------------------------------------
+            //--------------------------------------------------------------------------------------------
         } else { //Si el campo 0,0 está lleno, guarda los datos en el array.
             for ($i = 0; $i < $cantidad; $i++) {
                 $arrayAlumni[$i] = ['name' => $_GET['name' . $i], 'surname' => $_GET['surname' . $i], 'year' => $_GET['year' . $i]];
@@ -107,7 +106,7 @@
 
                 echo "<tr>";
 
-                foreach ($alumni as $dato => $info) { //Recorre el array interiorn muestra el dato del campo ($info)
+                foreach ($alumni as $dato => $info) { //Recorre el array interior muestra el dato del campo ($info)
                     echo "<td>$info</td>"; // echo $dato; muestra el dato
                 }
                 echo "</tr>";

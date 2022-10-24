@@ -6,13 +6,13 @@
 
 function ordenar($val) //recibe variable (array en este caso)
 {
-    for ($j = 0; $j < count($val); $j++) { //bucle doble para recorrer y comprobar el número para cambiar
-        for ($i = 0; $i < count($val) - 1; $i++) { //recorre y comprueba hasta el penúltimo valor.
+    for ($i = 0; $i < count($val) - 1; $i++) { //bucle doble para recorrer y comprobar el número para cambiar
+        for ($j = 0; $j < count($val); $j++) { //recorre y comprueba hasta el penúltimo valor.
 
-            if ($val[$i] > $val[$i + 1]) { //si el valor de i es mayor que el siguiente valor
-                $temp = $val[$i + 1]; //la variable temporal recibe el valor  siguiente
-                $val[$i + 1] = $val[$i]; //el valor siguiente recibe el valor de i
-                $val[$i] = $temp; //el valor de i recibe el de la variable temporal
+            if ($val[$i]['year'] < $val[$j]['year']) { //si el valor de i con 'year' es mayor que el siguiente valor
+                $aux = $val[$j]; //la variable temporal recibe el valor  siguiente
+                $val[$j] = $val[$i]; //el valor de j recibe el valor i
+                $val[$i] = $val[$aux]; //el valor de i recibe el de la variable temporal
             }
         }
     }

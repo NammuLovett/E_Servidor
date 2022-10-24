@@ -36,12 +36,12 @@
     <?php
     const FILAS = 5; //dimensiones
     const COLUMNAS = 8;
-    for ($i = 0; $i < FILAS * COLUMNAS; $i++) { //bucle para generar random number
-        $num[$i] = rand(100, 999);
+    for ($i = 0; $i < FILAS * COLUMNAS; $i++) { //bucle para generar random number en 1 array
+        $num[$i] = rand(100, 999); //genera número saleatorios del 100-999
         for ($j = 0; $j < $i; $j++) { //bucle para recorrer las recurrencias
             while ($num[$i] == $num[$j]) { //bucle para comprobar que no se repite y genera de nuevo
                 $num[$i] = rand(100, 999);
-                $j = 0; //resetea la j para que empiece de nuevo por si coincide
+                $j = 0; //resetea la j para que empiece a comprobar desde el principio
             }
         }
     }
