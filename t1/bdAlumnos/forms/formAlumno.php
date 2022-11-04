@@ -9,10 +9,7 @@
 </head>
 
 <body>
-
-
     <h3>¿Cuántos alumnos quieres introducir ? </h3>
-
     <?php
     if (empty($_GET['cantidad'])) { // Si está vacío, muestra el formulario
     ?>
@@ -21,7 +18,7 @@
             <input type="submit" name="operacion" value="Enviar">
         </form>
     <?php
-    } else { //si está relleno el formulario cantidad, bucle input con la cantidad 
+    } else { //si está relleno el formulario cantidad, bucle input con la cantidad
         $cantidad = $_GET['cantidad'];
         if (!isset($_GET['name0'])) { // tabla, si el primer valor está vacío muestro la tabla para rellenarlo
             echo "<h3>Hay que hacer $cantidad filas </h3>";
@@ -30,21 +27,28 @@
             echo "<tr>
         <th>nombre</th>
         <th>apellidos</th>
-        <th>año</th>
+        <th>expediente</th>
+        <th>teléfono</th>
+        <th>email</th>
+
         </tr>";
             echo "<form action='#' method='get'>";
             for ($i = 0; $i < $cantidad; $i++) {
                 echo "<tr>";
-                for ($j = 0; $j < 3; $j++) {
+                for ($j = 0; $j < 5; $j++) {
                     if ($j == 0) {
                         echo "<td><input type='text' name='name" . $i . "' placeholder='nombre'></td>";
                     } elseif ($j == 1) {
                         echo "<td><input type='text' name='surname" . $i . "' placeholder='apellidos'></td>";
                     } elseif ($j == 2) {
-                        echo "<td><input type='text' name='year" . $i . "' placeholder='año'></td>";
+                        echo "<td><input type='text' name='expedient" . $i . "' placeholder='expediente'></td>";
+                    } elseif ($j == 3) {
+                        echo "<td><input type='text' name='tlfAlum" . $i . "' placeholder='teléfono'></td>";
+                    } elseif ($j == 4) {
+                        echo "<td><input type='text' name='email" . $i . "' placeholder='email'></td>";
                     }
                 }
-                echo "</tr>";
+                echo "</tr>"; //cierra fila
             }
             echo "</table> <br>"; //Cierra tabla gen inputs
 
@@ -56,7 +60,13 @@
             //-----------------------------------
         } else { //Si el campo 0,0 está lleno, guarda los datos en el array.
             for ($i = 0; $i < $cantidad; $i++) {
-                $arrayAlumni[$i] = ['name' => $_GET['name' . $i], 'surname' => $_GET['surname' . $i], 'year' => $_GET['year' . $i]];
+                $arrayAlumni[$i] = [
+                    'name' => $_GET['name' . $i],
+                    'surname' => $_GET['surname' . $i],
+                    'expedient' => $_GET['expedient' . $i],
+                    'tlfAlum' => $_GET['tlfAlum' . $i],
+                    'email' => $_GET['email' . $i]
+                ];
             }
             //Y Mostrar resultados de la tabla
             echo "<table>";
@@ -82,7 +92,6 @@
 
 
     ?>
-
 
 </body>
 
