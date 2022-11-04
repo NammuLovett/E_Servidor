@@ -3,9 +3,9 @@
 function bdConnect()
 {
     $servername = "localhost";
-    $username = "";
+    $username = "root";
     $password = "";
-    $dbname = "myDB";
+    $dbname = "instituteDB";
 
     //Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
