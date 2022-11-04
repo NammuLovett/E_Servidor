@@ -73,7 +73,9 @@
             echo "<tr>
             <th>nombre</th>
             <th>apellido</th>
-            <th>año nacimiento</th>
+            <th>expediente</th>
+            <th>teléfono</th>
+            <th>email</th>
             </tr>";
 
             foreach ($arrayAlumni as $alumni) { //Recorre el array pral
