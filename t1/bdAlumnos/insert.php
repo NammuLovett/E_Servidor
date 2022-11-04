@@ -2,7 +2,6 @@
 
 include_once 'bdconnect.php';
 
-bdConnect();
 
 $sql = "INSERT INTO alumno (nameAlum, surnameAlum, expedient, emailAlum)
 VALUES ('john','doe','12345','user@email.com')";

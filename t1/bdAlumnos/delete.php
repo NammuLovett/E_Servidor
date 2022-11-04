@@ -1,5 +1,4 @@
 <?php
-bdConnect();
 
 //sql to delete a record
 $sql = "DELETE FROM alumnos WHERE id=";
