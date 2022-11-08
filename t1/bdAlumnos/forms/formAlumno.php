@@ -83,7 +83,8 @@
 
                 echo "<tr>";
 
-                foreach ($alumni as $dato => $info) { //Recorre el array de dentro y lo muestra con el dato del campo ($info)
+                foreach ($alumni as $dato => $info) {
+                    //Recorre el array de dentro y lo muestra con el dato del campo ($info)
                     echo "<td>$info</td>"; // echo $dato; muestra el dato
                 }
                 echo "</tr>";

@@ -1,6 +1,6 @@
 <?php
 
-include_once 'bdconnect.php';
+require_once 'bdconnect.php';
 
 
 $sql = "INSERT INTO alumno (nameAlum, surnameAlum, expedient, emailAlum)
