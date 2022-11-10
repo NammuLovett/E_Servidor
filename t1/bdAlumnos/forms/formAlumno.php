@@ -17,7 +17,7 @@
             <input type="number" name="cantidad">
             <input type="submit" name="operacion" value="Enviar">
         </form>
-    <?php
+        <?php
     } else { //si está relleno el formulario cantidad, bucle input con la cantidad
         $cantidad = $_GET['cantidad'];
         if (!isset($_GET['name0'])) { // tabla, si el primer valor está vacío muestro la tabla para rellenarlo
@@ -78,6 +78,8 @@
             <th>email</th>
             </tr>";
 
+            echo "<form action='../inserts/insertAlum.php'>";
+            $x = 0;
             foreach ($arrayAlumni as $alumni) { //Recorre el array pral
                 /*foreach dentro de otro para que recorriera el array y el otro array */
 
@@ -86,10 +88,18 @@
                 foreach ($alumni as $dato => $info) {
                     //Recorre el array de dentro y lo muestra con el dato del campo ($info)
                     echo "<td>$info</td>"; // echo $dato; muestra el dato
+        ?>
+                    <input type="hidden" name="<?= $dato . $x ?>" value="<?= $info ?>">
+    <?php
+
                 }
+                $x++;
                 echo "</tr>";
             }
             echo "</table>";
+            echo "<input type='hidden' name='cantidad' value='$cantidad'>";
+            echo "<input type='submit' name='submit' value='Enviar info'>";
+            echo "</form>";
         }
     }
 
