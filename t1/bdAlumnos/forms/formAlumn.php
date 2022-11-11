@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -30,18 +30,21 @@
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email" />
 
-                <select name="idGrupo">
+                <select name="id_group">
                     <option value="" selected disabled hidden>-- Selecciona un grupo --</option>
                     <?php
+                    include_once('../bdconnect.php');
                     $sql = "SELECT * FROM grupo";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($grupo = $result->fetch_assoc()) {
-                            echo "<option value='" . $grupo['idGrupo'] . "'>" . $grupo['nombreG'] . "</option>";
+                            echo "<option value='" . $grupo['id_group'] . "'>" . $grupo['nameCourse'] . "</option>";
                         }
                     }
                     ?>
                 </select>
+
+                <input type="submit" name="insertar" value="Guardar">
 
 
 
