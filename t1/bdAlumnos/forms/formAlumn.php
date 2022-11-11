@@ -30,8 +30,18 @@
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email" />
 
-                <label for="select">Selecciona grupo:</label>
-                <input type="email" name="email" id="email" />
+                <select name="idGrupo">
+                    <option value="" selected disabled hidden>-- Selecciona un grupo --</option>
+                    <?php
+                    $sql = "SELECT * FROM grupo";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($grupo = $result->fetch_assoc()) {
+                            echo "<option value='" . $grupo['idGrupo'] . "'>" . $grupo['nombreG'] . "</option>";
+                        }
+                    }
+                    ?>
+                </select>
 
 
 
