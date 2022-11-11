@@ -8,8 +8,8 @@ $expedient = $_GET['expedient'];
 $tlfAlum = $_GET['tlfAlum'];
 $email = $_GET['email'];
 
-$sql = "INSERT INTO alumno
-VALUES (null, $id_group,'$name','$surname',$expedient,'$tlfAlum','$email')";
+$sql = "INSERT INTO alumno (id_group, nameAlum, surnameAlum, expedient, tlfAlum, emailAlum) 
+VALUES ($id_group,'$name','$surname','$expedient','$tlfAlum','$email')";
 $conn->query($sql);
 
 

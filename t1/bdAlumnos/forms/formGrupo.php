@@ -1,45 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ej1</title>
+    <title>Formulario Alumnos
+    </title>
+
 </head>
 
 <body>
+    <form action="../inserts/insertGrupo.php" method="GET">
+        <fieldset>
+            <legend>Información de los Alumnos</legend>
+            <p>
+                <label for="name">ID GRUPO </label>
+                <input type="text" name="name" id="name" />
 
-    <?php
-    if (!isset($_GET["nombre"]) && !isset($_GET["apellido1"])) {
-    ?>
-        <form action="ej1.php" method="GET">
-            <p><label for="nombre">Nombre: </label>
-                <input type="text" name="nombre" id="nombre">
+                <label for="surname">Nombre del grupo</label>
+                <input type="text" name="surname" id="surname" />
+
+                <label for="expedient">Curso</label>
+                <input type="text" name="expedient" id="expedient" />
+
+
+                <input type="submit" name="insertar" value="Guardar">
+
+
+
+
             </p>
-            <p><label for="apellido1">Primer apellido:</label>
-                <input type="text" name="apellido1" id="apellido1">
-            </p>
-            <p><input type="submit" value="enviar"></p>
-        </form>
-
-    <?php
-    } else {
-        $nombre = $_GET["nombre"];
-        $apellido1 = $_GET["apellido1"];
-
-        echo "Hola $nombre $apellido1";
-    }
-
-    /*
-        Crea un ej1 que permita leer una cantidad.
-    A partir de cantidad, prepara un ej1 con tantas cajas de datos como su valor.
-    A partir de los datos de todas las cajas de la página anterior, súmalos y muestra el total.
-    */
-    ?>
-
-
-
+        </fieldset>
 </body>
 
 </html>
