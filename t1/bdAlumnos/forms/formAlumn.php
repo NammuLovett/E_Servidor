@@ -13,23 +13,28 @@
 <body>
     <form action="../inserts/insertAlum.php" method="GET">
         <fieldset>
-            <legend>Información de los Alumnos</legend>
+            <legend>Crear alumnos</legend>
             <p>
                 <label for="name">Nombre: </label>
                 <input type="text" name="name" id="name" />
-
+            </p>
+            <p>
                 <label for="surname">Apellido:</label>
                 <input type="text" name="surname" id="surname" />
-
+            </p>
+            <p>
                 <label for="expedient">Expediente:</label>
                 <input type="text" name="expedient" id="expedient" />
-
+            </p>
+            <p>
                 <label for="tlfAlum">Teléfono:</label>
                 <input type="text" name="tlfAlum" id="tlfAlum" />
-
+            </p>
+            <p>
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email" />
-
+            </p>
+            <p>
                 <select name="id_group">
                     <option value="" selected disabled hidden>-- Selecciona un grupo --</option>
                     <?php
@@ -42,6 +47,8 @@
                         }
                     }
                     ?>
+            </p>
+            <p>
                 </select>
 
                 <input type="submit" name="insertar" value="Guardar">

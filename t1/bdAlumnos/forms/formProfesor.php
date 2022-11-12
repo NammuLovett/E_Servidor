@@ -1,45 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ej1</title>
+    <title>Formulario Alumnos
+    </title>
+
 </head>
 
 <body>
-
-    <?php
-    if (!isset($_GET["nombre"]) && !isset($_GET["apellido1"])) {
-    ?>
-        <form action="ej1.php" method="GET">
-            <p><label for="nombre">Nombre: </label>
-                <input type="text" name="nombre" id="nombre">
+    <form action="../inserts/insertProf.php" method="GET">
+        <fieldset>
+            <legend>Crear profesor</legend>
+            <p>
+                <label for="id_teacher">ID </label>
+                <input type="text" name="id_teacher" id="id_teacher" />
             </p>
-            <p><label for="apellido1">Primer apellido:</label>
-                <input type="text" name="apellido1" id="apellido1">
+            <p>
+                <label for="nameTeacher">Nombre </label>
+                <input type="text" name="nameTeacher" id="nameTeacher" />
             </p>
-            <p><input type="submit" value="enviar"></p>
-        </form>
-
-    <?php
-    } else {
-        $nombre = $_GET["nombre"];
-        $apellido1 = $_GET["apellido1"];
-
-        echo "Hola $nombre $apellido1";
-    }
-
-    /*
-        Crea un ej1 que permita leer una cantidad.
-    A partir de cantidad, prepara un ej1 con tantas cajas de datos como su valor.
-    A partir de los datos de todas las cajas de la página anterior, súmalos y muestra el total.
-    */
-    ?>
+            <p>
+                <label for="surnameTeacher">Apellidos</label>
+                <input type="text" name="surnameTeacher" id="surnameTeacher" />
+            </p>
+            <p>
+                <label for="tlfTeacher">Teléfono</label>
+                <input type="text" name="tlfTeacher" id="tlfTeacher" />
+            </p>
+            <p>
+                <label for="emailTeacher"> email</label>
+                <input type="text" name="emailTeacher" id="emailTeacher" />
+            </p>
+            <p>
+                <input type="submit" name="insertar" value="Guardar">
 
 
+            </p>
 
+        </fieldset>
 </body>
 
 </html>

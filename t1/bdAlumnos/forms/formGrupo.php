@@ -13,17 +13,20 @@
 <body>
     <form action="../inserts/insertGrupo.php" method="GET">
         <fieldset>
-            <legend>Información de los Alumnos</legend>
+            <legend>Crear grupo</legend>
             <p>
-                <label for="name">ID GRUPO </label>
+                <label for="id">ID </label>
+                <input type="text" name="id" id="id" />
+            </p>
+            <p>
+                <label for="name">Nombre</label>
                 <input type="text" name="name" id="name" />
-
-                <label for="surname">Nombre del grupo</label>
-                <input type="text" name="surname" id="surname" />
-
-                <label for="expedient">Curso</label>
-                <input type="text" name="expedient" id="expedient" />
-
+            </p>
+            <p>
+                <label for="curso">Curso</label>
+                <input type="text" name="curso" id="curso" />
+            </p>
+            <p>
 
                 <input type="submit" name="insertar" value="Guardar">
 
