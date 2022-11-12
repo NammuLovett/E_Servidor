@@ -1,7 +1,14 @@
 * {
   font-family: 'Courier New', Courier, monospace;
 }
+h1 {
+  display: flex;
 
+  justify-content: center;
+}
+marquee {
+  color: rgb(163, 163, 163);
+}
 body {
   background-color: aliceblue;
 }

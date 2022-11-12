@@ -19,7 +19,4 @@ if ($conn->query($sql) === true) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-
-
-
 $conn->close();

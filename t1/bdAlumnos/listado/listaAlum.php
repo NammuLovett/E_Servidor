@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <!-- charset  unicode, todos los idiomas, emojis... -->
     <meta name="description" content="This is my first webpage ... " />
@@ -15,23 +16,41 @@
     <!-- El conjunto de cosas que se muestra en pantalla, es decir si no se pone, las páginas responsives no se muestran, es la referencia de estas-->
     <meta name="generator" content="Programa" />
     <!-- Si nuestra página web ha sido creada de forma automáticamente con un programa -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <!-- Señalar contenido que tiene relación con el html de la web, tienes que poner en rel la palabra cable -->
     <link rel="icon" href="img/favicon.ico" />
     <!-- Favicon de la web -->
     <title>BD MURALLA</title>
-  </head>
-  <body>
-    <h1>BD Murallas</h1>
-    <header>
-      <marquee behavior="" direction="">Selecciona una acción</marquee>
+</head>
 
-      <section>
-        <nav>
-          <a href="#">HOME</a> | <a href="./index2.html">INSERTAR DATOS</a> |
-          <a href="./index3.html">LISTADOS</a>
-        </nav>
-      </section>
-    </header>
-  </body>
+<body>
+
+    <?php
+    $sql = "SELECT * FROM Alumno a JOIN Grupo g ON g.id_grupo = a.id_grupo";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while ($alumno = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $alumno['id_alumno'] . "</td>";
+            echo "<td>" . $alumno['nombre'] . "</td>";
+            echo "<td>" . $alumno['nombre'] . "</td>";
+            echo "<td>" . $alumno['apellidos'] . " " . $alumno['apellido2'] . "</td>";
+            echo "<td>" . $alumno['expediente'] . "</td>";
+            echo "<td>" . $alumno['telefono'] . "</td>";
+            echo "<td>" . $alumno['email'] . "</td>";
+            echo "<td><button onclick='update(" . $alumno['id_alumno'] . ", `alumno`)'>Editar</button></td>";
+            echo "<td><button onclick='confirmDelete(" . $alumno['id_alumno'] . ", `alumno`)'>Eliminar</button></td>";
+            echo "</tr>";
+        }
+    } else {
+    ?>
+        <tr>
+            <td colspan="8">No hay resultados</td>
+        </tr>
+    <?php
+    }
+    $conn->close();
+    ?>
+</body>
+
 </html>
