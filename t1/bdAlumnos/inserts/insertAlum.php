@@ -10,7 +10,7 @@ $email = $_POST['email'];
 
 
 
-$sql = "INSERT INTO Alumno (id_grupo, nombre, apellidos, expediente, telefono, email)
+$sql = "INSERT INTO Alumno (`id_grupo`, `nombre`, `apellidos`, `expediente`, `telefono`, `email`)
 VALUES ('$id_group', '$name', '$surname', '$expedient', '$tlfAlum', '$email')";
 
 if ($conn->query($sql) === true) {
@@ -20,6 +20,6 @@ if ($conn->query($sql) === true) {
 }
 
 
-/* $sql = "INSERT INTO `alumno` (`id_alum`, `nameAlum`, `surnameAlum`, `expedient`, `tlfAlum`, `emailAlum`, `id_group`) VALUES ('$id_alumn', '$name', '$surname', '$expedient', '$tlfAlum', '$email', '$id_group')"; */
+
 
 $conn->close();
