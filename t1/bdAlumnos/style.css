@@ -15,3 +15,18 @@ body {
 nav {
   text-align: center;
 }
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  color: rgb(64, 89, 198);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: small;
+  text-align: center;
+}
+td {
+  background-color: rgb(202, 223, 242);
+  text-align: center;
+}

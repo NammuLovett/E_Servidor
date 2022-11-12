@@ -16,7 +16,7 @@
     <!-- El conjunto de cosas que se muestra en pantalla, es decir si no se pone, las páginas responsives no se muestran, es la referencia de estas-->
     <meta name="generator" content="Programa" />
     <!-- Si nuestra página web ha sido creada de forma automáticamente con un programa -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <!-- Señalar contenido que tiene relación con el html de la web, tienes que poner en rel la palabra cable -->
     <link rel="icon" href="img/favicon.ico" />
     <!-- Favicon de la web -->
@@ -24,21 +24,42 @@
 </head>
 
 <body>
-    <h1>LISTADOS</h1>
-    <section>
-        <header>
-            <marquee behavior="" direction="">Selecciona una acción</marquee>
+    <table>
+        <tr>
+            <th>TABLA GRUPOS</th>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>CURSO </th>
+            <th></th>
+            <th></th>
+        </tr>
 
-        </header>
+        <?php
+        include_once('../bdconnect.php');
+        $sql = "SELECT * FROM Alumno a JOIN Grupo g ON g.id_grupo = a.id_grupo";
+        $result = $conn->query($sql);
 
-        <section>
-            <nav>
-                <a href="./index.html"><---</a> |
-                <a href="./listado/listaAlum.php">ALUMNOS</a> |
-                <a href="./listado/listaProf.php"">PROFESOR</a> |
-                <a href="./listado/listaGrupos.php">GRUPOS</a>
-            </nav>
-        </section>
+        if ($result->num_rows > 0) {
+            while ($alumno = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $alumno['id_grupo'] . "</td>";
+                echo "<td>" . $alumno['nombreGrupo'] . "</td>";
+                echo "<td>" . $alumno['curso'] . "</td>";
+                echo "<td><button onclick='update(" . $alumno['id_alumno'] . ", `alumno`)'>Editar</button></td>";
+                echo "<td><button onclick='confirmDelete(" . $alumno['id_alumno'] . ", `alumno`)'>Eliminar</button></td>";
+                echo "</tr>";
+            }
+        } else {
+        ?>
+            <tr>
+                <td colspan="8">No hay resultados</td>
+            </tr>
+        <?php
+        }
+        $conn->close();
+        ?>
 </body>
 
 </html>

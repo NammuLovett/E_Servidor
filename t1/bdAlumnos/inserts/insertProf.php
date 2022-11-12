@@ -7,7 +7,7 @@ $tlfTeacher = $_POST['tlfTeacher'];
 $emailTeacher = $_POST['emailTeacher'];
 
 
-$sql = "INSERT INTO Profesor (`nombre`, `apellidos`, `telefono`, `email`)
+$sql = "INSERT INTO Profesor (`nombreP`, `apellidosP`, `telefonoP`, `emailP`)
 VALUES ('$name', '$surname', '$tlfTeacher', '$emailTeacher')";
 
 if ($conn->query($sql) === true) {

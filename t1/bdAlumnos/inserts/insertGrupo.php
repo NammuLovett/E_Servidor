@@ -5,7 +5,7 @@ include_once("../bdconnect.php");
 $name = $_POST['name'];
 $course = $_POST['curso'];
 
-$sql = "INSERT INTO grupo (`nombre`, `curso`)
+$sql = "INSERT INTO grupo (`nombreGrupo`, `curso`)
 VALUES ('$name','$course')";
 
 if ($conn->query($sql) === true) {
