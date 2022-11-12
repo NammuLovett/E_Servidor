@@ -56,7 +56,7 @@
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($grupo = $result->fetch_assoc()) {
-                            echo "<option value='" . $grupo['id_grupo'] . "'>" . $grupo['nombre'] . "</option>";
+                            echo "<option value='" . $grupo['id_grupo'] . "'>" . $grupo['nombreGrupo'] . "</option>";
                         }
                     }
                     ?>

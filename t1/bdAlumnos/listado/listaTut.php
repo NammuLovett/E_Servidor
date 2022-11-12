@@ -26,34 +26,28 @@
 <body>
     <table>
         <tr>
-            <th>TABLA PROFESORES</th>
+            <th>TABLA TUTORÍA</th>
         </tr>
         <tr>
-            <th>ID</th>
+            <th>PROFESOR</th>
             <th>GRUPO</th>
-            <th>NOMBRE </th>
-            <th>APELLIDOS</th>
-            <th>TELÉFONO</th>
-            <th>EMAIL</th>
             <th></th>
             <th></th>
         </tr>
 
         <?php
         include_once('../bdconnect.php');
-        $sql = "SELECT * FROM Profesor";
+        $sql = "SELECT * FROM Profesor p JOIN tutoria t ON p.idProfesor = t.idProfesor JOIN grupo g ON t.id_grupo = g.id_grupo";
+
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            while ($prof = $result->fetch_assoc()) {
+            while ($tuto = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo "<td>" . $prof['id_profesor'] . "</td>";
-                echo "<td>" . $prof['nombreP'] . "</td>";
-                echo "<td>" . $prof['apellidosP'] . "</td>";
-                echo "<td>" . $prof['telefonoP'] . "</td>";
-                echo "<td>" . $prof['emailP'] . "</td>";
-                echo "<td><button onclick='update(" . $prof['id_profesor'] . ", `profesor`)'>Editar</button></td>";
-                echo "<td><button onclick='confirmDelete(" . $prof['id_profesor'] . ", `profesor`)'>Eliminar</button></td>";
+                echo "<td>" . $tuto['nombreP'] . "</td>";
+                echo "<td>" . $tuto['nombreGrupo'] . "</td>";
+                echo "<td><button onclick='update(" . $tuto['id_profesor'] . ", `profesor`)'>Editar</button></td>";
+                echo "<td><button onclick='confirmDelete(" . $tuto['id_profesor'] . ", `profesor`)'>Eliminar</button></td>";
                 echo "</tr>";
             }
         } else {
