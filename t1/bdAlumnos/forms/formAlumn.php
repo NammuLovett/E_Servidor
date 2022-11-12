@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <form action="../inserts/insertAlum.php" method="GET">
+    <form action="../inserts/insertAlum.php" method="POST">
         <fieldset>
             <legend>Crear alumnos</legend>
             <p>
@@ -39,11 +39,11 @@
                     <option value="" selected disabled hidden>-- Selecciona un grupo --</option>
                     <?php
                     include_once('../bdconnect.php');
-                    $sql = "SELECT * FROM grupo";
+                    $sql = "SELECT * FROM Grupo";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($grupo = $result->fetch_assoc()) {
-                            echo "<option value='" . $grupo['id_group'] . "'>" . $grupo['nameCourse'] . "</option>";
+                            echo "<option value='" . $grupo['id_grupo'] . "'>" . $grupo['nombre'] . "</option>";
                         }
                     }
                     ?>

@@ -1,9 +1,9 @@
 <?php
 
-
-
 $sql = "INSERT INTO grupo (id_group, nameCourse, yearCourse)
 VALUES ('1','DAW','22/23')";
+
+/* INSERT INTO `grupo` (`id_group`, `nameCourse`, `yearCourse`) VALUES ('2', 'DAM', '22/23') */
 
 if ($conn->query($sql) === true) {
     echo "Registro realizado con éxito";

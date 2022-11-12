@@ -1,14 +1,23 @@
 <?php
+include_once("../bdconnect.php");
 
+$id_teacher = $_GET['id_teacher'];
+$nameTeacher = $_GET['nameTeacher'];
+$surnameTeacher = $_GET['surnameTeacher'];
+$tlfTeacher = $_GET['tlfTeacher'];
+$emailTeacher = $_GET['emailTeacher'];
 
+$sql = "INSERT INTO profesor (id_teacher, nameTeacher, surnameTeacher, tlfTeacher, emailTeacher) 
+VALUES ($id_group,'$name','$surname','$expedient','$tlfAlum','$email')";
+$conn->query($sql);
 
-$sql = "INSERT INTO profesor (id_teacher, nameTeacher, surnameTeacher, tlfTeacher, emailTeacher)
-VALUES ('1','john','doe','999212121','user@email.com')";
 
 if ($conn->query($sql) === true) {
     echo "Registro realizado con éxito";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
+
 
 $conn->close();
