@@ -10,6 +10,7 @@ VALUES ('$name','$course')";
 
 if ($conn->query($sql) === true) {
     echo "Registro realizado con éxito";
+    header("location:../listado/listaGrupos.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

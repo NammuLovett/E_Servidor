@@ -15,6 +15,7 @@ VALUES ('$id_group', '$name', '$surname', '$expedient', '$tlfAlum', '$email')";
 
 if ($conn->query($sql) === true) {
     echo "Registro realizado con éxito";
+    header("location:../listado/listaAlum.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

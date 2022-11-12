@@ -59,6 +59,7 @@
                 echo "<td><button onclick='confirmDelete(" . $alumno['id_alumno'] . ", `alumno`)'>Eliminar</button></td>";
                 echo "</tr>";
             }
+            echo "<a href='../index3.html'><-- ATRÁS</a> ";
         } else {
         ?>
             <tr>

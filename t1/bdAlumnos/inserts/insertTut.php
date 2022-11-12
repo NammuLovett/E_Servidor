@@ -10,6 +10,7 @@ VALUES ('$idGrupo','$idProf')";
 
 if ($conn->query($sql) === true) {
     echo "Registro realizado con éxito";
+    header("location:../listado/listaTut.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

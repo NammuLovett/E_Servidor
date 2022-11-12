@@ -51,6 +51,7 @@
                 echo "<td><button onclick='confirmDelete(" . $tuto['id_profesor'] . ", `profesor`)'>Eliminar</button></td>";
                 echo "</tr>";
             }
+            echo "<a href='../index3.html'><-- ATRÁS</a> ";
         } else {
         ?>
             <tr>
