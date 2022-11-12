@@ -29,23 +29,24 @@
             <th>TABLA TUTORÍA</th>
         </tr>
         <tr>
-            <th>PROFESOR</th>
             <th>GRUPO</th>
+            <th>PROFESOR</th>
             <th></th>
             <th></th>
         </tr>
 
         <?php
         include_once('../bdconnect.php');
-        $sql = "SELECT * FROM Profesor p JOIN tutoria t ON p.idProfesor = t.idProfesor JOIN grupo g ON t.id_grupo = g.id_grupo";
+        $sql = "SELECT * FROM Profesor p JOIN Tutoria t ON p.id_profesor = t.id_profesor JOIN grupo g ON t.id_grupo = g.id_grupo";
 
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             while ($tuto = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo "<td>" . $tuto['nombreP'] . "</td>";
                 echo "<td>" . $tuto['nombreGrupo'] . "</td>";
+                echo "<td>" . $tuto['emailP'] . "</td>";
+
                 echo "<td><button onclick='update(" . $tuto['id_profesor'] . ", `profesor`)'>Editar</button></td>";
                 echo "<td><button onclick='confirmDelete(" . $tuto['id_profesor'] . ", `profesor`)'>Eliminar</button></td>";
                 echo "</tr>";
