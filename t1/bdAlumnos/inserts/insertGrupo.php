@@ -1,14 +1,18 @@
 <?php
 
-$sql = "INSERT INTO grupo (id_group, nameCourse, yearCourse)
-VALUES ('1','DAW','22/23')";
+include_once("../bdconnect.php");
 
-/* INSERT INTO `grupo` (`id_group`, `nameCourse`, `yearCourse`) VALUES ('2', 'DAM', '22/23') */
+$name = $_POST['name'];
+$course = $_POST['curso'];
+
+$sql = "INSERT INTO grupo (`nombre`, `curso`)
+VALUES ('$name','$course')";
 
 if ($conn->query($sql) === true) {
     echo "Registro realizado con éxito";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
 
 $conn->close();

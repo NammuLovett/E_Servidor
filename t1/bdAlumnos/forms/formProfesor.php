@@ -11,13 +11,9 @@
 </head>
 
 <body>
-    <form action="../inserts/insertProf.php" method="GET">
+    <form action="../inserts/insertProf.php" method="POST">
         <fieldset>
             <legend>Crear profesor</legend>
-            <p>
-                <label for="id_teacher">ID </label>
-                <input type="text" name="id_teacher" id="id_teacher" />
-            </p>
             <p>
                 <label for="nameTeacher">Nombre </label>
                 <input type="text" name="nameTeacher" id="nameTeacher" />

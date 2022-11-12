@@ -11,13 +11,9 @@
 </head>
 
 <body>
-    <form action="../inserts/insertGrupo.php" method="GET">
+    <form action="../inserts/insertGrupo.php" method="POST">
         <fieldset>
             <legend>Crear grupo</legend>
-            <p>
-                <label for="id">ID </label>
-                <input type="text" name="id" id="id" />
-            </p>
             <p>
                 <label for="name">Nombre</label>
                 <input type="text" name="name" id="name" />
