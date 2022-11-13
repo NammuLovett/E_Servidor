@@ -5,7 +5,6 @@ $varID = $_GET['idAlumn'];
 $sql = "DELETE FROM Alumno WHERE id_alumno=$varID";
 
 if ($conn->query($sql) === true) {
-    echo "New record created sucessfully";
     header("location:../listado/listaAlum.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
