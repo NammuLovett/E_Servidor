@@ -44,11 +44,22 @@
                 <label for="emailTeacher"> email</label>
                 <input type="text" name="emailTeacher" id="emailTeacher" />
             </p>
-            <p>
-                <input type="submit" name="insertar" value="Guardar">
+            <select name="id_group">
+                <option value="" selected disabled hidden>-- Selecciona un grupo --</option>
+                <?php
+                include_once('../bdconnect.php');
+                $sql = "SELECT * FROM Grupo";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($grupo = $result->fetch_assoc()) {
+                        echo "<option value='" . $grupo['id_grupo'] . "'>" . $grupo['nombreGrupo'] . "</option>";
+                    }
+                }
+                ?>
+            </select>
+            <input type="submit" name="insertar" value="Guardar">
 
 
-            </p>
 
         </fieldset>
 </body>

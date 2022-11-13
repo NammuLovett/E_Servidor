@@ -47,8 +47,9 @@
 
         if ($result->num_rows > 0) {
             while ($alumno = $result->fetch_assoc()) {
+                $varID =  $alumno['id_alumno'];
                 echo "<tr>";
-                echo "<td>" . $alumno['id_alumno'] . "</td>";
+                echo "<td>" . $varID . "</td>";
                 echo "<td>" . $alumno['nombreGrupo'] . "</td>";
                 echo "<td>" . $alumno['nombreA'] . "</td>";
                 echo "<td>" . $alumno['apellidosA'] . "</td>";
@@ -56,7 +57,9 @@
                 echo "<td>" . $alumno['telefonoA'] . "</td>";
                 echo "<td>" . $alumno['emailA'] . "</td>";
                 echo "<td><button onclick='update(" . $alumno['id_alumno'] . ", `alumno`)'>Editar</button></td>";
-                echo "<td><button onclick='confirmDelete(" . $alumno['id_alumno'] . ", `alumno`)'>Eliminar</button></td>";
+                echo "<td><form action='../delete/deleteAlum.php'>   
+                <input type='hidden' name='idAlumn' value='$varID'>
+                <input type='submit' value='Eliminar'></input></form></td>";
                 echo "</tr>";
             }
             echo "<a href='../index3.html'><-- ATRÁS</a> ";
