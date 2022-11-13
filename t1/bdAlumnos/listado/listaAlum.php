@@ -56,7 +56,12 @@
                 echo "<td>" . $alumno['expediente'] . "</td>";
                 echo "<td>" . $alumno['telefonoA'] . "</td>";
                 echo "<td>" . $alumno['emailA'] . "</td>";
-                echo "<td><button onclick='update(" . $alumno['id_alumno'] . ", `alumno`)'>Editar</button></td>";
+
+                echo "<td><form action='../forms/formupdateAlum.php'>   
+                <input type='hidden' name='idAlumn' value='$varID'>
+                <input type='submit' value='Editar'></input></form></td>";
+
+
                 echo "<td><form action='../delete/deleteAlum.php'>   
                 <input type='hidden' name='idAlumn' value='$varID'>
                 <input type='submit' value='Eliminar'></input></form></td>";
@@ -74,4 +79,4 @@
         ?>
 </body>
 
-</html>
+</html>º
