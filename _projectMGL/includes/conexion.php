@@ -1,19 +1,17 @@
 <?php
-// Conexión
-$servidor = 'localhost';
-$usuario = 'root';
-$password = '';
-$basededatos = 'monument';
+
+$servername = "Localhost";
+$username = "root";
+$password = "root";
+$dbname = "monument";
 
 
 try {
-
-	$db = mysqli_connect($servidor, $usuario, $password, $basededatos);
+	$conn = new mysqli($servername, $username, $password, $dbname);
 } catch (Exception $e) {
 	header("location: error.php");
 }
 
-mysqli_query($db, "SET NAMES 'utf8'");
 
 // Iniciar la sesión
 if (!isset($_SESSION)) {
