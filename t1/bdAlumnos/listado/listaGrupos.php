@@ -38,22 +38,34 @@
 
         <?php
         include_once('../bdconnect.php');
-        $sql = "SELECT * FROM Alumno a JOIN Grupo g ON g.id_grupo = a.id_grupo ORDER BY g.id_grupo";
+        $sql = "SELECT * FROM Grupo ORDER BY id_grupo";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             while ($alumno = $result->fetch_assoc()) {
+                $varID =  $alumno['id_grupo'];
+
                 echo "<tr>";
-                echo "<td>" . $alumno['id_grupo'] . "</td>";
+                echo "<td>" . $varID . "</td>";
                 echo "<td>" . $alumno['nombreGrupo'] . "</td>";
                 echo "<td>" . $alumno['curso'] . "</td>";
-                echo "<td><button onclick='update(" . $alumno['id_alumno'] . ", `alumno`)'>Editar</button></td>";
-                echo "<td><button onclick='confirmDelete(" . $alumno['id_alumno'] . ", `alumno`)'>Eliminar</button></td>";
+
+                echo "<td><form action='../forms/formupdateGrupo.php'>   
+                <input type='hidden' name='idGrupo' value='$varID'>
+                <input type='submit' value='📝'></input></form></td>";
+
+                echo "<form action='../delete/deleteGrupo.php'>   
+                <input type='hidden' name='idGrupo' value='$varID'>
+                <input type='hidden' value='Eliminar'></input>"
+        ?>
+                <td><button value="Eliminar" onclick="return confirm('¿Seguro que desea eliminar?')" )> ❌ </button></td>
+                </form>
+            <?php
                 echo "</tr>";
             }
             echo "<a href='../index3.html'><-- ATRÁS</a> ";
         } else {
-        ?>
+            ?>
             <tr>
                 <td colspan="8">No hay resultados</td>
             </tr>

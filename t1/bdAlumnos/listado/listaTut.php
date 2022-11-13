@@ -43,17 +43,27 @@
 
         if ($result->num_rows > 0) {
             while ($tuto = $result->fetch_assoc()) {
+                $varID =  $tuto['id_grupo'];
                 echo "<tr>";
                 echo "<td>" . $tuto['nombreGrupo'] . "</td>";
                 echo "<td>" . $tuto['emailP'] . "</td>";
 
-                echo "<td><button onclick='update(" . $tuto['id_profesor'] . ", `profesor`)'>Editar</button></td>";
-                echo "<td><button onclick='confirmDelete(" . $tuto['id_profesor'] . ", `profesor`)'>Eliminar</button></td>";
+                echo "<td><form action='../forms/formupdateTut.php'>   
+                <input type='hidden' name='idProf' value='$varID'>
+                <input type='submit' value='📝'></input></form></td>";
+
+                echo "<form action='../delete/deleteTut.php'>   
+                <input type='hidden' name='idProf' value='$varID'>
+                <input type='hidden' value='Eliminar'></input>"
+        ?>
+                <td><button value="Eliminar" onclick="return confirm('¿Seguro que desea eliminar?')" )> ❌ </button></td>
+                </form>
+            <?php
                 echo "</tr>";
             }
             echo "<a href='../index3.html'><-- ATRÁS</a> ";
         } else {
-        ?>
+            ?>
             <tr>
                 <td colspan="8">No hay resultados</td>
             </tr>
