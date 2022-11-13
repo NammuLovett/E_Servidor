@@ -4,7 +4,7 @@
 function getMonument($idMonument)
 {
     require_once 'includes/conexion.php';
-    $db = new mysqli('localhost', "root", "", "monument");
+    $db = new mysqli('localhost', "root", "root", "monument");
 
 
 
