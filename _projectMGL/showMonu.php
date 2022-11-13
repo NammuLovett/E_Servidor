@@ -33,6 +33,8 @@
     <form action="showMonuBD.php" method="POST">
         <!--hidden value -->
         <input type="hidden" name="idMonument" value="<?= $monuments['idMonument'] ?>">
+
+
         <label for="monName">Nombre del Monumento:</label>
         <input readonly type="text" name="monName" placeholder="Nombre del Monumento" maxlength="100" value="<?= $monuments['name'] ?> " />
         <?php echo isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'], 'monName') : ''; ?>
