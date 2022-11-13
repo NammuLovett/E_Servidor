@@ -31,58 +31,36 @@
 
             <?php
             include_once('../bdconnect.php');
-            $idAlum = $_GET['idAlumn'];
+            $idProf = $_GET['idProf'];
 
-            $sql = "SELECT * FROM Alumno a JOIN Grupo g ON g.id_grupo = a.id_grupo WHERE id_alumno = $idAlum";
+            $sql = "SELECT * FROM Profesor WHERE id_profesor = $idProf";
             $result = $conn->query($sql);
 
             echo "<table>";
-            echo "<form action='../update/updateAlum.php' method='POST'>";
+            echo "<form action='../update/updateProf.php' method='POST'>";
             if ($result->num_rows > 0) {
-                $alumno = $result->fetch_assoc();
-                $idAlum =  $alumno['id_alumno'];
-                $idGrupo = $alumno['id_grupo'];
-                $nombre =  $alumno['nombreA'];
-                $apellido =  $alumno['apellidosA'];
-                $nombreGrupo =  $alumno['nombreGrupo'];
-                $exp =  $alumno['expediente'];
-                $tlf = $alumno['telefonoA'];
-                $email = $alumno['emailA'];
+                $profesor = $result->fetch_assoc();
+                $idProf =  $profesor['id_profesor'];
+                $nombre =  $profesor['nombreP'];
+                $apellido =  $profesor['apellidosP'];
+                $tlf = $profesor['telefonoP'];
+                $email = $profesor['emailP'];
 
             ?>
 
                 <tr>
                     <th>ID</th>
-                    <th>GRUPO</th>
                     <th>NOMBRE</th>
                     <th>APELLIDOS</th>
-                    <th>EXP</th>
                     <th>TLF</th>
                     <th>EMAIL</th>
                 </tr>
                 <tr>
-                    <td><input type='text' value='<?= $idAlum ?>' disabled> </input></td>
-                    <input type='hidden' name='id' value='<?= $idAlum ?>'> </input>
-                    <td><select name="id_group">
-                            <option value="<?= $idGrupo ?>" selected hidden><?php echo "$nombreGrupo" ?></option>
-                            <?php
-                            $sql = "SELECT * FROM Grupo WHERE id_grupo != $idGrupo";
-                            $result = $conn->query($sql);
-                            if ($result->num_rows > 0) {
-                                while ($grupo = $result->fetch_assoc()) {
-                                    $idGrupo = $grupo['id_grupo'];
-                                    $nombreGrupo = $grupo['nombreGrupo'];
-                            ?>
-                                    <option value=<?= $idGrupo ?>> <?php echo $nombreGrupo; ?></option>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </select> </td>
+                    <td><input type='text' value='<?= $idProf ?>' disabled> </input></td>
+                    <input type='hidden' name='id' value='<?= $idProf ?>'> </input>
                     <td><input type='text' name='name' value='<?= $nombre ?>'> </input></td>
                     <td><input type='text' name='surname' value='<?= $apellido ?>'> </input></td>
-                    <td><input type='text' name='expedient' value='<?= $exp ?>'> </input></td>
-                    <td><input type='text' name='tlfAlum' value='<?= $tlf ?>'> </input></td>
+                    <td><input type='text' name='tlf' value='<?= $tlf ?>'> </input></td>
                     <td><input type='text' name='email' value='<?= $email ?>'> </input></td>
 
                 </tr>

@@ -1,22 +1,20 @@
 <?php
 include_once("../bdconnect.php");
 
-$id_group = $_POST['id_group'];
-$id_alumno = $_POST['id'];
+$id_prof = $_POST['id'];
 $name = $_POST['name'];
 $surname = $_POST['surname'];
-$expedient = $_POST['expedient'];
-$tlfAlum = $_POST['tlfAlum'];
+$tlf = $_POST['tlf'];
 $email = $_POST['email'];
 
 
 
 
-$sql = "UPDATE Alumno SET id_grupo = $id_group, nombreA = '$name', apellidosA = '$surname', expediente = '$expedient', telefonoA = '$tlfAlum', emailA = '$email' WHERE id_alumno = $id_alumno";
+$sql = "UPDATE Profesor SET id_profesor = $id_prof, nombreP = '$name', apellidosP = '$surname', telefonoP = '$tlf', emailP = '$email' WHERE id_profesor = $id_prof";
 
 if ($conn->query($sql) === true) {
     echo "Registro realizado con éxito";
-    header("location:../listado/listaAlum.php");
+    header("location:../listado/listaProf.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

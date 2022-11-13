@@ -30,7 +30,6 @@
         </tr>
         <tr>
             <th>ID</th>
-            <th>GRUPO</th>
             <th>NOMBRE </th>
             <th>APELLIDOS</th>
             <th>TELÉFONO</th>
