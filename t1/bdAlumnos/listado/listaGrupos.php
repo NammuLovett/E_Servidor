@@ -42,13 +42,13 @@
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            while ($alumno = $result->fetch_assoc()) {
-                $varID =  $alumno['id_grupo'];
+            while ($grupo = $result->fetch_assoc()) {
+                $varID =  $grupo['id_grupo'];
 
                 echo "<tr>";
                 echo "<td>" . $varID . "</td>";
-                echo "<td>" . $alumno['nombreGrupo'] . "</td>";
-                echo "<td>" . $alumno['curso'] . "</td>";
+                echo "<td>" . $grupo['nombreGrupo'] . "</td>";
+                echo "<td>" . $grupo['curso'] . "</td>";
 
                 echo "<td><form action='../forms/formupdateGrupo.php'>   
                 <input type='hidden' name='idGrupo' value='$varID'>
