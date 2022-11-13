@@ -44,21 +44,33 @@
         $sql = "SELECT * FROM Profesor";
         $result = $conn->query($sql);
 
+
         if ($result->num_rows > 0) {
             while ($prof = $result->fetch_assoc()) {
+                $varID =  $prof['id_profesor'];
                 echo "<tr>";
-                echo "<td>" . $prof['id_profesor'] . "</td>";
+                echo "<td>" . $varID  . "</td>";
                 echo "<td>" . $prof['nombreP'] . "</td>";
                 echo "<td>" . $prof['apellidosP'] . "</td>";
                 echo "<td>" . $prof['telefonoP'] . "</td>";
                 echo "<td>" . $prof['emailP'] . "</td>";
-                echo "<td><button onclick='update(" . $prof['id_profesor'] . ", `profesor`)'>Editar</button></td>";
-                echo "<td><button onclick='confirmDelete(" . $prof['id_profesor'] . ", `profesor`)'>Eliminar</button></td>";
+
+                echo "<td><form action='../forms/formupdateProf.php'>   
+                <input type='hidden' name='idProf' value='$varID'>
+                <input type='submit' value='📝'></input></form></td>";
+
+                echo "<form action='../delete/deleteProf.php'>   
+                <input type='hidden' name='idProf' value='$varID'>
+                <input type='hidden' value='Eliminar'></input>"
+        ?>
+                <td><button value="Eliminar" onclick="return confirm('¿Seguro que desea eliminar?')" )> ❌ </button></td>
+                </form>
+            <?php
                 echo "</tr>";
             }
             echo "<a href='../index3.html'><-- ATRÁS</a> ";
         } else {
-        ?>
+            ?>
             <tr>
                 <td colspan="8">No hay resultados</td>
             </tr>
