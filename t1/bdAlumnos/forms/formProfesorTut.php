@@ -17,6 +17,7 @@
     <meta name="generator" content="Programa" />
     <!-- Si nuestra página web ha sido creada de forma automáticamente con un programa -->
     <link rel="stylesheet" href="../style.css" />
+
     <!-- Señalar contenido que tiene relación con el html de la web, tienes que poner en rel la palabra cable -->
     <link rel="icon" href="img/favicon.ico" />
     <!-- Favicon de la web -->
@@ -24,43 +25,31 @@
 </head>
 
 <body>
-    <form action="../inserts/insertAlum.php" method="POST">
+    <form action="../inserts/insertProf.php" method="POST">
         <fieldset>
-            <legend>Crear alumnos</legend>
+            <legend>Crear profesor</legend>
             <p>
-                <label for="name">Nombre: </label>
-                <input type="text" name="name" id="name" />
+                <label for="nameTeacher">Nombre </label>
+                <input type="text" name="nameTeacher" id="nameTeacher" />
             </p>
             <p>
-                <label for="surname">Apellido:</label>
-                <input type="text" name="surname" id="surname" />
+                <label for="surnameTeacher">Apellidos</label>
+                <input type="text" name="surnameTeacher" id="surnameTeacher" />
             </p>
             <p>
-                <label for="expedient">Expediente:</label>
-                <input type="text" name="expedient" id="expedient" />
+                <label for="tlfTeacher">Teléfono</label>
+                <input type="text" name="tlfTeacher" id="tlfTeacher" />
             </p>
             <p>
-                <label for="tlfAlum">Teléfono:</label>
-                <input type="text" name="tlfAlum" id="tlfAlum" />
+                <label for="emailTeacher"> email</label>
+                <input type="text" name="emailTeacher" id="emailTeacher" />
             </p>
             <p>
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" />
+                <input type="submit" name="insertar" value="Guardar">
+
+
             </p>
-            <select name="id_group">
-                <option value="" selected disabled hidden>-- Selecciona un grupo --</option>
-                <?php
-                include_once('../bdconnect.php');
-                $sql = "SELECT * FROM Grupo";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    while ($grupo = $result->fetch_assoc()) {
-                        echo "<option value='" . $grupo['id_grupo'] . "'>" . $grupo['nombreGrupo'] . "</option>";
-                    }
-                }
-                ?>
-            </select>
-            <input type="submit" name="insertar" value="Guardar">
+
         </fieldset>
 </body>
 
