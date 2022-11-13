@@ -59,17 +59,21 @@
 
                 echo "<td><form action='../forms/formupdateAlum.php'>   
                 <input type='hidden' name='idAlumn' value='$varID'>
-                <input type='submit' value='Editar'></input></form></td>";
+                <input type='submit' value='📝'></input></form></td>";
 
 
-                echo "<td><form action='../delete/deleteAlum.php'>   
+                echo "<form action='../delete/deleteAlum.php'>   
                 <input type='hidden' name='idAlumn' value='$varID'>
-                <input type='submit' value='Eliminar'></input></form></td>";
+                <input type='hidden' value='Eliminar'></input>"
+        ?>
+                <td><button value="Eliminar" onclick="return confirm('¿Seguro que desea eliminar?')" )> ❌ </button></td>
+                </form>
+            <?php
                 echo "</tr>";
             }
             echo "<a href='../index3.html'><-- ATRÁS</a> ";
         } else {
-        ?>
+            ?>
             <tr>
                 <td colspan="8">No hay resultados</td>
             </tr>
@@ -79,4 +83,4 @@
         ?>
 </body>
 
-</html>º
+</html>
