@@ -38,7 +38,7 @@
 
         <?php
         include_once('../bdconnect.php');
-        $sql = "SELECT * FROM Alumno a JOIN Grupo g ON g.id_grupo = a.id_grupo";
+        $sql = "SELECT * FROM Alumno a JOIN Grupo g ON g.id_grupo = a.id_grupo ORDER BY g.id_grupo";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

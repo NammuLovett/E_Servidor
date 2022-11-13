@@ -37,7 +37,7 @@
 
         <?php
         include_once('../bdconnect.php');
-        $sql = "SELECT * FROM Profesor p JOIN Tutoria t ON p.id_profesor = t.id_profesor JOIN grupo g ON t.id_grupo = g.id_grupo";
+        $sql = "SELECT * FROM Profesor p JOIN Tutoria t ON p.id_profesor = t.id_profesor JOIN grupo g ON t.id_grupo = g.id_grupo ORDER BY nombreGrupo";
 
         $result = $conn->query($sql);
 
