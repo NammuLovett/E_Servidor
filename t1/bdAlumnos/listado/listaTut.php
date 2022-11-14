@@ -44,12 +44,14 @@
         if ($result->num_rows > 0) {
             while ($tuto = $result->fetch_assoc()) {
                 $varID =  $tuto['id_grupo'];
+                $varProf = $tuto['id_profesor'];
                 echo "<tr>";
                 echo "<td>" . $tuto['nombreGrupo'] . "</td>";
                 echo "<td>" . $tuto['emailP'] . "</td>";
 
                 echo "<td><form action='../forms/formupdateTut.php'>   
-                <input type='hidden' name='idProf' value='$varID'>
+                <input type='hidden' name='id_grupo' value='$varID'>
+                <input type='hidden' name='idProf' value='$varProf'>
                 <input type='submit' value='📝'></input></form></td>";
 
                 echo "<form action='../delete/deleteTut.php'>   
