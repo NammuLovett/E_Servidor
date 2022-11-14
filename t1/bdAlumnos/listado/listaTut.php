@@ -34,7 +34,7 @@
             <th></th>
             <th></th>
             <th>
-                <form action='../forms/formAlumn.php'><input type='submit' value='＋ Añadir nuevo'></input></form>
+                <form action='../forms/formTut.php'><input type='submit' value='＋ Añadir nuevo'></input></form>
             </th>
             <th></th>
         </tr>
