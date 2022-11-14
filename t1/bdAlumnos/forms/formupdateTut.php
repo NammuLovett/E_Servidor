@@ -54,6 +54,8 @@
                 </tr>
 
                 <tr>
+                    <input type="hidden" name="grupOriginal" value="<?= $idGrupo ?>">
+                    <input type="hidden" name="profOriginal" value="<?= $idProf ?>">
                     <td><select name="id_group">
                             <option value="<?= $idGrupo ?>" selected hidden><?php echo "$nombreGrupo" ?></option>
                             <?php

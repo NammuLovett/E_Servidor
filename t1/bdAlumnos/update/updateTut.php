@@ -3,14 +3,11 @@ include_once("../bdconnect.php");
 
 $idProf = $_POST['id_profesor'];
 $id_grupo = $_POST['id_group'];
-
-var_dump($id_grupo);
-var_dump($idProf);
-
+$profOri = $_POST['profOriginal'];
+$grupOri = $_POST['grupOriginal'];
 
 
-
-$sql = "UPDATE Tutoria SET id_grupo = $id_grupo, id_profesor = $idProf WHERE id_grupo = $id_grupo";
+$sql = "UPDATE Tutoria SET id_grupo = $id_grupo, id_profesor = $idProf WHERE id_grupo = $grupOri AND id_profesor = $profOri";
 
 
 
