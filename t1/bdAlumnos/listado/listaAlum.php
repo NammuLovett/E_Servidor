@@ -38,6 +38,10 @@
             <th>EMAIL</th>
             <th></th>
             <th></th>
+            <th>
+                <form action='../forms/formAlumn.php'><input type='submit' value='＋ Añadir nuevo'></input></form>
+            </th>
+            <th></th>
         </tr>
 
         <?php

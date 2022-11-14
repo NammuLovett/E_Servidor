@@ -84,12 +84,12 @@
                     <td><input type='text' name='expedient' value='<?= $exp ?>'> </input></td>
                     <td><input type='text' name='tlfAlum' value='<?= $tlf ?>'> </input></td>
                     <td><input type='text' name='email' value='<?= $email ?>'> </input></td>
-
+                    <td><input type="submit" name="insertar" value="Guardar"></td>
                 </tr>
 
 
                 </table>
-                <input type="submit" name="insertar" value="Guardar">
+
                 </form>
 
             <?php

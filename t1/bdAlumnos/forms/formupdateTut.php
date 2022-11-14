@@ -86,9 +86,10 @@
                             }
                             ?>
                         </select> </td>
+                    <td><input type="submit" name="insertar" value="Guardar"></td>
                 </tr>
                 </table>
-                <input type="submit" name="insertar" value="Guardar">
+
                 </form>
 
             <?php

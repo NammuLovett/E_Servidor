@@ -34,6 +34,10 @@
             <th>CURSO </th>
             <th></th>
             <th></th>
+            <th>
+                <form action='../forms/formGrupo.php'><input type='submit' value='＋ Añadir nuevo'></input></form>
+            </th>
+            <th></th>
         </tr>
 
         <?php

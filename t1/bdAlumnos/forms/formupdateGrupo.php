@@ -56,12 +56,10 @@
                     <input type='hidden' name='id' value='<?= $idGrupo ?>'> </input>
                     <td><input type='text' name='name' value='<?= $nombre ?>'> </input></td>
                     <td><input type='text' name='curso' value='<?= $curso ?>'> </input></td>
-
+                    <td><input type="submit" name="insertar" value="Guardar"></td>
                 </tr>
-
-
                 </table>
-                <input type="submit" name="insertar" value="Guardar">
+
                 </form>
 
             <?php

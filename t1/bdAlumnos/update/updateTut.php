@@ -1,14 +1,18 @@
 <?php
 include_once("../bdconnect.php");
 
-$id_grupo = $_POST['id'];
-$name = $_POST['name'];
-$curso = $_POST['curso'];
+$idProf = $_POST['id_profesor'];
+$id_grupo = $_POST['id_group'];
+
+var_dump($id_grupo);
+var_dump($idProf);
 
 
 
 
-$sql = "UPDATE Grupo SET id_grupo = $id_grupo, nombreGrupo = '$name', curso = '$curso' WHERE id_grupo = $id_grupo";
+$sql = "UPDATE Tutoria SET id_grupo = $id_grupo, id_profesor = $idProf WHERE id_grupo = $id_grupo";
+
+
 
 if ($conn->query($sql) === true) {
     echo "Registro realizado con éxito";

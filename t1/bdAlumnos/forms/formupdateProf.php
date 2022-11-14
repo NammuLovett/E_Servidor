@@ -62,12 +62,12 @@
                     <td><input type='text' name='surname' value='<?= $apellido ?>'> </input></td>
                     <td><input type='text' name='tlf' value='<?= $tlf ?>'> </input></td>
                     <td><input type='text' name='email' value='<?= $email ?>'> </input></td>
-
+                    <td> <input type="submit" name="insertar" value="Guardar"></td>
                 </tr>
 
 
                 </table>
-                <input type="submit" name="insertar" value="Guardar">
+
                 </form>
 
             <?php

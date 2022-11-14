@@ -36,6 +36,10 @@
             <th>EMAIL</th>
             <th></th>
             <th></th>
+            <th>
+                <form action='../forms/formProfesor.php'><input type='submit' value='＋ Añadir nuevo'></input></form>
+            </th>
+            <th></th>
         </tr>
 
         <?php
