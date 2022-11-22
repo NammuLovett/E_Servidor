@@ -36,7 +36,7 @@ class Soportes
 
     public function getPrecioConIva()
     {
-        return $this->getPrecio() * self::IVA . " euros";
+        echo "Precio IVA incluido: " . $this->getPrecio() * self::IVA . " euros";
     }
 
     public function getNumero()
