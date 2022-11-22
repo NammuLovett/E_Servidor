@@ -17,10 +17,10 @@ trabaje nuestro videoclub (cintas de vídeo, videojuegos, etc...):
 class Soporte
 {
     //propiedades
-    public string $titulo; //pública + 
-    protected int $numero; //protected #
-    private float $precio; //privada - 
-    private const IVA = 0.79;
+    public $titulo; //pública + 
+    protected $numero; //protected #
+    private $precio; //privada - 
+    private const IVA = 1.21;
 
     public function __construct(string $titulo, int $numero, float $precio)
     {
@@ -31,12 +31,12 @@ class Soporte
     //métodos 
     public function getPrecio()
     {
-        return "El precio es " . $this->getPrecio() . " euros";
+        return $this->precio;
     }
 
     public function getPrecioConIva()
     {
-        echo "Precio IVA incluido: " . $this->getPrecio() * self::IVA . " euros";
+        return $this->getPrecio() * self::IVA;
     }
 
     public function getNumero()
@@ -46,6 +46,6 @@ class Soporte
 
     public function muestraResumen()
     {
-        echo $this->titulo . "</br>" . $this->precio . " € (IVA no incluido)";
+        echo $this->titulo . " " . $this->precio . " € (IVA no incluido)";
     }
 }
