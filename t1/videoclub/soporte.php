@@ -14,7 +14,7 @@ trabaje nuestro videoclub (cintas de vídeo, videojuegos, etc...):
 // getters - setters 
 // resto de métodos 
 
-class Soportes
+class Soporte
 {
     //propiedades
     public string $titulo; //pública + 
