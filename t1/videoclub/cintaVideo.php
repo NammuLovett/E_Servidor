@@ -14,6 +14,6 @@ class CintaVideo extends soporte
     function mostrarResumen()
     {
         parent::muestraResumen();
-        echo $this->titulo . " " . $this->precio . " € (IVA no incluido)";
+        echo " " . $this->duracion . " minutos de duración";
     }
 }

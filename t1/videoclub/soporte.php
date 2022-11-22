@@ -46,6 +46,6 @@ class Soporte
 
     public function muestraResumen()
     {
-        echo $this->titulo . " " . $this->precio . " € (IVA no incluido)";
+        echo "<br> " . $this->titulo . " " . $this->precio . " € (IVA no incluido)";
     }
 }
