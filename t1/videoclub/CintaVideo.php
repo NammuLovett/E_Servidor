@@ -1,0 +1,19 @@
+<?php
+
+class CintaVideo extends soporte
+{
+    private $duracion; //pública + 
+
+
+    public function __construct(string $titulo, int $numero, float $precio, int $duracion)
+    {
+        parent::__construct($titulo, $numero, $precio);
+        $this->duracion = $duracion;
+    }
+
+    function mostrarResumen()
+    {
+        parent::muestraResumen();
+        echo $this->titulo . " " . $this->precio . " € (IVA no incluido)";
+    }
+}
