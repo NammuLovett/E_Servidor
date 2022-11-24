@@ -17,8 +17,8 @@ class Cliente
 
 
     public   function __construct(string $nombre, int $numero, array $soportesAlquilados, int $maxAlquilerConcurrente)
-
-
+    {
+    }
 }
 
 
