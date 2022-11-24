@@ -9,14 +9,14 @@ Tras ello, añade getter/setter  únicamente a numero, y un getter a numS
 class Cliente
 {
 
-    public string $nombre; //publica
-    private int $numero; //priv
-    private array $soportesAlquilados = array(); //priv
-    private int $numSoportesAlquilados; //priv
-    private int $maxAlquilerConcurrente; //priv
+    public  $nombre; //publica
+    private  $numero; //priv
+    private  $numSoportesAlquilados; //priv
+    private  $soportesAlquilados = array(); //priv
+    private  $maxAlquilerConcurrente; //priv
 
 
-    public   function __construct(string $nombre, int $numero, int $soportesAlquilados, int $maxAlquilerConcurrente)
+    public   function __construct(string $nombre, int $numero, array $soportesAlquilados, int $maxAlquilerConcurrente)
 
 
 }
