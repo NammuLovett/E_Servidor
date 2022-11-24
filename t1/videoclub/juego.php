@@ -18,12 +18,22 @@ class Juego extends soporte
     function muestraResumen()
     {
         parent::muestraResumen();
-        echo " Consola: " . $this->consola;
+        echo " Consola: " . $this->consola . "<br>";
+        $this->muestraJugadoresPosibles();
     }
 
     function muestraJugadoresPosibles()
     {
-        echo " minPlayers: " . $this->idiomas;
-        echo " maxPlayer: " . $this->formatPantalla;
+        /* "Para un jugador", "Para x jugadores" o "De X a Y jugadores" */
+
+        if ($this->minNumJugadores == $this->maxNumJugadores) {
+            if ($this->maxNumJugadores == 1) {
+                echo "Para un jugador";
+            } else {
+                echo "Para " . $this->maxNumJugadores . " jugadores";
+            }
+        } else {
+            echo "de " . $this->minNumJugadores . " a "  . $this->maxNumJugadores . " jugadores";
+        }
     }
 }
