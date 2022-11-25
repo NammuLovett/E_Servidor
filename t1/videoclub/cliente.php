@@ -75,24 +75,24 @@ class Cliente
         if ($this->tieneAlquilado($s)) {
             echo "El soporte está alquilado";
             return false;
-        }else{
-            echo "El soporte está para alquilar, hay".$this;
+        } else {
+            echo "El soporte está para alquilar, hay" . $this;
             return true;
-    }
-}
-
-
-
-/* cliente 3 */
-function devolver(int $nummSoporte):bool{
         }
     }
+
+
+
 
 
     function  listarAlquileres(): void
     {
     }
 }
+
+
+
+
 
 
 
