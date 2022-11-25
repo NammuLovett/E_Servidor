@@ -56,17 +56,17 @@ class Cliente
     public function alquilar(Soporte $s): bool
     {
         if ($this->tieneAlquilado($s)) {
-            echo 'El soporte lo tienes alquilado.<br>';
+            echo  " El soporte lo tienes alquilado.<br>";
             return false;
         } else {
             if ($this->getNumSoportesAlquilados() < $this->maxAlquilerConcurrente) {
                 array_push($this->soportesAlquilados, $s);
                 $this->numSoportesAlquilados++;
                 $s->setAlquilado(true);
-                echo 'Soporte alquilado.<br>';
+                echo  "Soporte alquilado.<br>";
                 return true;
             } else {
-                echo 'Has alcanzado el máximo de soportes alquilados (' . $this->maxAlquilerConcurrente . ').<br>';
+                echo "Has alcanzado el máximo de soportes alquilados (' . $this->maxAlquilerConcurrente . ').<br>";
                 return false;
             }
         }
@@ -77,19 +77,28 @@ class Cliente
     /* cliente 3 */
 
 
-    /*    function devolver(int $numSoporte): bool
+    function devolver(int $numSoporte): bool
     {
-        if ($this->tieneAlquilado($s) == 0) {
-            echo "El soporte no está alquilado";
+        if ($this->numSoportesAlquilados == 0) {
+            echo " No tienes soportes alquilados";
             return false;
         } else {
-            if($this->)
+            foreach ($this->soportesAlquilados as $soporte) {
+                if ($numSoporte == $soporte->getNumero()) {
+                    $soporte = null;
+                    $this->numSoportesAlquilados--;
+                    echo " Soporte devuelto correctamente";
+                    return true;
+                } else {
+
+                    echo " No hay soporte con ese número";
+                    return false;
+                }
+            }
+
             return true;
         }
     }
- */
-
-
 
 
     function  listarAlquileres(): void
@@ -102,6 +111,8 @@ class Cliente
         }
     }
 }
+
+
 
 
 
