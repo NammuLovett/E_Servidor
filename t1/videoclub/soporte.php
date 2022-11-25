@@ -31,6 +31,7 @@ class Soporte
         $this->numero = self::$totalSoporte;
         self::$totalSoporte++;
     }
+
     //métodos 
     public function getPrecio()
     {

@@ -8,7 +8,7 @@ include_once 'soporte.php';
 
 
 //instanciamos un par de obj Cliente
-$cliente1 = new Cliente("Bruce Wayne", 23);
+$cliente1 = new Cliente("Bruce Wayne ✏️ ", 23);
 $cliente2 = new Cliente("Paco de Lucía", 65);
 
 //Mostramos el número de cada cliente creado
