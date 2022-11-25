@@ -1,6 +1,6 @@
 <?php
-
-class CintaVideo extends soporte
+include_once 'soporte.php';
+class CintaVideo extends Soporte
 {
     private $duracion; //private - 
 

@@ -9,14 +9,17 @@ class Cliente
     public string $nombre;
     private int $numero;
     private int $maxAlquilerConcurrente;
-    private int $numSoportesAlquilados;
-    private array $soportesAlquilados;
+    private int $numSoportesAlquilados = 0;
+    private array $soportesAlquilados = array();
+    private static int $totalClientes = 0;
 
-    public function __construct(string $nombre, int $numero, int $maxAlquilerConcurrente = 3)
+
+    public function __construct(string $nombre, int $maxAlquilerConcurrente = 3)
     {
         $this->nombre = $nombre;
-        $this->numero = $numero;
         $this->maxAlquilerConcurrente = $maxAlquilerConcurrente;
+        $this->numero = self::$totalClientes;
+        self::$totalClientes++;
     }
 
     public function getNumero() //getNumero
@@ -33,13 +36,15 @@ class Cliente
     }
     public function muestraResumen()
     {
-        echo 'Nombre: ' . $this->nombre . '</br>Cantidad de alquileres: ' . count($this->soportesAlquilados) . '<br>';
+        echo 'Nombre: ' . $this->nombre . '</br> Cantidad de alquileres: ' . count($this->soportesAlquilados) . '<br>';
     }
 
     /* cliente 2 */
 
-    public function tieneAlquilado(soporte $s): bool
+    public function tieneAlquilado(Soporte $s): bool
+
     {
+        //in array te dice si el valor está dentro del array
         if (in_array($s, $this->soportesAlquilados)) {
             return true;
         } else {
@@ -70,23 +75,31 @@ class Cliente
 
 
     /* cliente 3 */
-    function devolver(int $numSoporte): bool
+
+
+    /*    function devolver(int $numSoporte): bool
     {
-        if ($this->tieneAlquilado($s)) {
-            echo "El soporte está alquilado";
+        if ($this->tieneAlquilado($s) == 0) {
+            echo "El soporte no está alquilado";
             return false;
         } else {
-            echo "El soporte está para alquilar, hay" . $this;
+            if($this->)
             return true;
         }
     }
-
+ */
 
 
 
 
     function  listarAlquileres(): void
     {
+        echo '<strong>' . $this->nombre . ' tiene ' . count($this->soportesAlquilados) . ' soportes alquilados: <br></strong>';
+        foreach ($this->soportesAlquilados as $Soporte) {
+            echo '<br>';
+            echo get_class($Soporte) . ':<br>';
+            echo $Soporte->muestraResumen();
+        }
     }
 }
 

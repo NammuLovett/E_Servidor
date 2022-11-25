@@ -17,16 +17,19 @@ trabaje nuestro videoclub (cintas de vídeo, videojuegos, etc...):
 class Soporte
 {
     //propiedades
-    public $titulo; //pública + 
-    protected $numero; //protected #
-    private $precio; //privada - 
+    public string $titulo; //pública + 
+    protected int $numero; //protected #
+    private float $precio; //privada - 
     private const IVA = 1.21;
+    private bool $alquilado = false;
+    private static int $totalSoporte = 0;
 
-    public function __construct(string $titulo, int $numero, float $precio)
+    public function __construct(string $titulo,  float $precio)
     {
         $this->titulo = $titulo;
-        $this->numero = $numero;
         $this->precio = $precio;
+        $this->numero = self::$totalSoporte;
+        self::$totalSoporte++;
     }
     //métodos 
     public function getPrecio()
@@ -47,5 +50,14 @@ class Soporte
     public function muestraResumen()
     {
         echo "<br> " . $this->titulo . " " . $this->precio . " € (IVA no incluido)";
+    }
+
+    public function setAlquilado(bool $b)
+    {
+        $this->alquilado = $b;
+    }
+    public function isAlquilado()
+    {
+        return $this->alquilado;
     }
 }
