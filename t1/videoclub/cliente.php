@@ -1,8 +1,9 @@
 <?php
 include_once 'soporte.php';
 
-/* declare(strict_types=1); ver documentación*/ 
+/* declare(strict_types=1); ver documentación*/
 
+/* cliente 1 */
 class Cliente
 {
     public string $nombre;
@@ -35,18 +36,67 @@ class Cliente
         echo 'Nombre: ' . $this->nombre . '</br>Cantidad de alquileres: ' . count($this->soportesAlquilados) . '<br>';
     }
 
-    /* cliente 1 */
+    /* cliente 2 */
+
+    public function tieneAlquilado(soporte $s): bool
+    {
+        if (in_array($s, $this->soportesAlquilados)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function alquilar(Soporte $s): bool
+    {
+        if ($this->tieneAlquilado($s)) {
+            echo 'El soporte lo tienes alquilado.<br>';
+            return false;
+        } else {
+            if ($this->getNumSoportesAlquilados() < $this->maxAlquilerConcurrente) {
+                array_push($this->soportesAlquilados, $s);
+                $this->numSoportesAlquilados++;
+                $s->setAlquilado(true);
+                echo 'Soporte alquilado.<br>';
+                return true;
+            } else {
+                echo 'Has alcanzado el máximo de soportes alquilados (' . $this->maxAlquilerConcurrente . ').<br>';
+                return false;
+            }
+        }
+    }
 
 
 
+    /* cliente 3 */
+    function devolver(int $numSoporte): bool
+    {
+        if ($this->tieneAlquilado($s)) {
+            echo "El soporte está alquilado";
+            return false;
+        }else{
+            echo "El soporte está para alquilar, hay".$this;
+            return true;
+    }
+}
+
+
+
+/* cliente 3 */
+function devolver(int $nummSoporte):bool{
+        }
+    }
+
+
+    function  listarAlquileres(): void
+    {
+    }
 }
 
 
 
 
-
-
-El array de soportes alquilados contedrá clases que hereden de Soporte. 
 
 
 
