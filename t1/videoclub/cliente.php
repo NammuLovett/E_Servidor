@@ -12,6 +12,7 @@ class Cliente
     private int $numSoportesAlquilados = 0;
     private array $soportesAlquilados = array();
     private static int $totalClientes = 0;
+    private int $totalAlquilados = 0;
 
 
     public function __construct(string $nombre, int $maxAlquilerConcurrente = 3)
@@ -62,6 +63,7 @@ class Cliente
             if ($this->getNumSoportesAlquilados() < $this->maxAlquilerConcurrente) {
                 array_push($this->soportesAlquilados, $s);
                 $this->numSoportesAlquilados++;
+                $this->totalAlquilados++;
                 $s->setAlquilado(true);
                 echo  "Soporte alquilado.<br>";
                 return true;
