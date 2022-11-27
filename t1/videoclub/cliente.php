@@ -35,6 +35,7 @@ class Cliente
     {
         return $this->numSoportesAlquilados;
     }
+
     public function muestraResumen()
     {
         echo 'Nombre: ' . $this->nombre . '</br> Cantidad de alquileres: ' . count($this->soportesAlquilados) . '<br>';
