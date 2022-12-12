@@ -1,10 +1,21 @@
 <?php
 
-$accion = $GET['action'];
-$datos = array();
-$cont = new noteControler;
-$datos = $cont->getDatos($accion);
+require_once 'config/config.php';
+require_once 'model/db.php';
+require_once 'controllers/note.php';
 
-require_once 'header.php';
-require_once '$cont->vista.php';
-require_once 'footer.php';
+
+
+if (!isset($_GET["action"])) $_GET["action"] = constant("DEFAULT_ACTION");
+
+$controlador = new noteController();
+
+$dataToView = array();
+$dataToView = $controlador->{$_GET["action"]()};
+
+
+/*LOAD views*/
+
+require_once 'view/template/header.php';
+require_once 'view/' . $controlador->view . '.php';
+require_once 'view/template/footer.php';
