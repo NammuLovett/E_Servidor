@@ -32,3 +32,6 @@ class noteController
         $this->view = 'list_notes';
     }
 }
+
+
+/*hola*/
