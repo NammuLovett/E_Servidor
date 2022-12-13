@@ -45,5 +45,6 @@ class NoteTable
                 $i++;
             }
         }
+        return $this->notas;
     }
 }

@@ -5,7 +5,7 @@ class noteController
 {
     public $page_title;
     public $view;
-    private $noteObt;
+    public $noteObt;
 
     public function __construct()
     {

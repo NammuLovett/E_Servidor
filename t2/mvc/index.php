@@ -12,7 +12,8 @@ if (!isset($_GET["action"])) $_GET["action"] = constant("DEFAULT_ACTION");
 $controlador = new noteController();
 
 $dataToView = array();
-$dataToView = $controlador->{$_GET["action"]()};
+$dataToView = $controlador->{$_GET["action"]}();
+var_dump($dataToView);
 
 
 /*LOAD views
