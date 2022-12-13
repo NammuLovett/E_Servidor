@@ -1,4 +1,6 @@
 <?php
+require_once 'model/note.php';
+
 
 $servername = "Localhost";
 $username = "root";

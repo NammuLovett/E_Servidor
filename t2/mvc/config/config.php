@@ -1,3 +1,3 @@
 <?php 
 
-/*DB connection to the database*/
+/*DATABASE VALUE */
