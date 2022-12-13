@@ -1,6 +1,6 @@
 <?php
 
-/*DATABASE VALUE */
+/*DATABASE CONNECTION VALUES*/
 define('DB_HOST', 'localhost');
 define('DB_DATABASE', 'mvc_example');
 define('DB_USER', 'root');
