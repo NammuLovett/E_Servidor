@@ -2,7 +2,7 @@
 
 require_once 'config/config.php';
 require_once 'model/db.php';
-require_once 'controllers/note.php';
+require_once 'controler/note.php';
 
 
 
