@@ -15,12 +15,6 @@ $dataToView = array();
 $dataToView = $controlador->{$_GET["action"]}();
 var_dump($dataToView);
 
-
-/*LOAD views
-
-https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934
-*/
-
 require_once 'view/template/header.php';
 require_once 'view/' . $controlador->view . '.php';
 require_once 'view/template/footer.php';
