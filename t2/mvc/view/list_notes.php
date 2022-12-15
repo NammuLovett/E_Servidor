@@ -13,7 +13,7 @@
                     <div class="card-text"><?php echo nl2br($note->contenido); ?></div>
                     <hr class="mt-1" />
                     <a href="index.php?action=edit&id=<?php echo $note->id; ?>" class="btn btn-primary">Editar</a>
-                    <a href="index.php?action=confirmDelete&id=<?php echo $note->id; ?>" class="btn btn-danger">Eliminar</a>
+                    <a href="index.php?action=confirmDelete&id=<?php echo $note->id; ?>" class="btn btn-danger">del</a>
                 </div>
             </div>
         <?php

@@ -6,7 +6,9 @@ require_once 'controler/note.php';
 
 
 
-if (!isset($_GET["action"])) $_GET["action"] = constant("DEFAULT_ACTION");
+if (!isset($_GET["action"])) {
+    $_GET["action"] = constant("DEFAULT_ACTION");
+}
 
 
 $controlador = new noteController();
