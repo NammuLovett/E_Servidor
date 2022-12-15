@@ -62,7 +62,20 @@ class NoteTable
             $this->conection->close(); // Cierra la conexión.
             return new Note($id, $title, $content); // Devuelve un objeto nota con el último id generado en la bbdd y los atributos dados por el usuario.
         } else { // Si no se inserta.
+            $this->conection->close(); // Cierra la conexión.
+            return false; // Devuelve false.
+        }
+    }
 
+    // Método para borrar una nota.
+    public function deleteNote($id)
+    {
+        $this->getConection(); //Inicializa la conexión.
+        $sql = "DELETE FROM " . $this->table . " WHERE id=$id"; // Consulta.
+        if ($this->conection->query($sql) === TRUE) { // Si se borra correctamente.
+            $this->conection->close(); // Cierra la conexión.
+            return true; // Devuelve true.
+        } else { // Si no.
             $this->conection->close(); // Cierra la conexión.
             return false; // Devuelve false.
         }

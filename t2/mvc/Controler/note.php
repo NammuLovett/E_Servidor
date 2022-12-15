@@ -31,4 +31,19 @@ class noteController
     {
         $this->view = 'list_notes';
     }
+
+    // Confirmación de borrado.
+    public function confirmDelete()
+    {
+        $this->view = 'delete';
+        $this->title = "¿Seguro que quiere eliminar esta nota?";
+        return $this->noteTableObj->getNoteById($_GET['id']); // Devuelve una nota, con el id pasado por url.
+    }
+
+    // Borrar una nota.
+    public function delete()
+    {
+        $this->noteTableObj->deleteNote($_GET['id']); // Elimina la nota.
+        return $this->list(); // Vuelve a la lista de notas.
+    }
 }
