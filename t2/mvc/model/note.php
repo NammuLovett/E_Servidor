@@ -47,4 +47,24 @@ class NoteTable
         }
         return $this->notas;
     }
+
+
+    // Método para inserta una nota.
+    public function insertNote(string $title, string $content)
+    {
+
+        $this->getConection(); // Inicializa la conexión.
+        $sql = "INSERT INTO " . $this->table . " (title, content) VALUES ('$title', '$content')"; // Consulta.
+
+        if ($this->conection->query($sql) === TRUE) { // Si se inserta correctamente.
+
+            $id = $this->conection->insert_id; // Recoge el último id generado en la tabla.
+            $this->conection->close(); // Cierra la conexión.
+            return new Note($id, $title, $content); // Devuelve un objeto nota con el último id generado en la bbdd y los atributos dados por el usuario.
+        } else { // Si no se inserta.
+
+            $this->conection->close(); // Cierra la conexión.
+            return false; // Devuelve false.
+        }
+    }
 }
