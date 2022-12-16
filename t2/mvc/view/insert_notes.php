@@ -1,5 +1,5 @@
 <div class="insert">
-    <form action="index.php?action=list&insNotes=true" method="post">
+    <form action="index.php?action=guardar" method="post">
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Título</span>
             <input class="form-control" type="text" name="title" placeholder="Escriba aquí..." required></input>
@@ -9,6 +9,6 @@
             <input class="form-control" name="content" placeholder="Escriba aquí..." required></input>
         </div>
         <input class="btn btn-primary" type="submit" value="Aceptar" />
-        <a href="index.php"><button class="btn btn-outline-danger">Cancelar</button></a>
     </form>
+    <a href="index.php"><button class="btn btn-outline-danger">Cancelar</button></a>
 </div>

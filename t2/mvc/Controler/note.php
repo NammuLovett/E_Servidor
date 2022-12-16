@@ -19,6 +19,7 @@ class noteController
     public function list()
     {
         $this->page_title = 'Listado de Notas';
+        header('location:');
         return $this->noteObt->getNotes();
     }
     public function insert()
@@ -27,10 +28,15 @@ class noteController
         $this->view = 'insert_notes';
     }
 
+
+
     public function guardar()
     {
-        $this->view = 'list_notes';
+        $this->noteObt->insertNote($_POST['title'], $_POST['content']);
+        return $this->list();
     }
+
+
 
     // Confirmación de borrado.
     public function confirmDelete()
