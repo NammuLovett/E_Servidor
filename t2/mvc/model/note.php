@@ -48,6 +48,22 @@ class NoteTable
         return $this->notas;
     }
 
+    // Accede a la base de datos para devolver la nota que cuyo id sea el que se le pase como parámetro.
+    public function getNoteById($id)
+    {
+        $this->getConection(); // Inicializa la conexión.
+        $sql = "SELECT * FROM " . $this->table . " WHERE id=$id"; // Consulta.
+        $result = $this->conection->query($sql); // Ejecuta la consulta.
+        if ($result->num_rows > 0) { // Si devuelve más de 0 filas.
+            $row = $result->fetch_assoc(); // Guarda el resultado.
+            $this->conection->close(); // Cierra la conexión.
+            return new Note($row['id'], $row['title'], $row['content']); // Devuelve un objeto nota con los datos de la BBDD.
+        } else { // Si no devuelve más de 0 filas.
+            $this->conection->close(); // Cierra la conexión.
+            return false; // Devuelve false.
+        }
+    }
+
 
     // Método para inserta una nota.
     public function insertNote(string $title, string $content)
@@ -73,6 +89,19 @@ class NoteTable
         $this->getConection(); //Inicializa la conexión.
         $sql = "DELETE FROM " . $this->table . " WHERE id=$id"; // Consulta.
         if ($this->conection->query($sql) === TRUE) { // Si se borra correctamente.
+            $this->conection->close(); // Cierra la conexión.
+            return true; // Devuelve true.
+        } else { // Si no.
+            $this->conection->close(); // Cierra la conexión.
+            return false; // Devuelve false.
+        }
+    }
+
+    public function updateNote(int $id, string $title, string $content)
+    {
+        $this->getConection(); // Inicializa la conexión.
+        $sql = "UPDATE " . $this->table . " SET title='$title', content='$content' WHERE id=$id"; // Consulta.
+        if ($this->conection->query($sql) === TRUE) { // Si se actualiza correctamente.
             $this->conection->close(); // Cierra la conexión.
             return true; // Devuelve true.
         } else { // Si no.

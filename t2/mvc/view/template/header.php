@@ -9,10 +9,10 @@
 
 </head>
 
-<body class="bg-info">
+<body class="bg-light">
     <div class="container ">
         <header class="mb-5">
-            <div class="p-5 text-center bg-light" style="margin-top: 60px;">
+            <div class="p-3 text-center bg-info " style="margin-top: 60px;">
                 <h1 class="mb-3"><?php echo $controlador->page_title; ?></h1>
 
             </div>

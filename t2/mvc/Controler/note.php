@@ -42,13 +42,29 @@ class noteController
     {
         $this->view = 'delete';
         $this->title = "¿Seguro que quiere eliminar esta nota?";
-        return $this->noteTableObj->getNoteById($_GET['id']); // Devuelve una nota, con el id pasado por url.
+        return $this->noteObt->getNoteById($_GET['id']); // Devuelve una nota, con el id pasado por url.
     }
 
     // Borrar una nota.
     public function delete()
     {
-        $this->noteTableObj->deleteNote($_GET['id']); // Elimina la nota.
+        $this->noteObt->deleteNote($_GET['id']); // Elimina la nota.
+        return $this->list(); // Vuelve a la lista de notas.
+    }
+
+
+    // Confirmación de modificación.
+    public function confirmUpdate()
+    {
+        $this->view = 'update';
+        $this->title = "Editar nota";
+        return $this->noteObt->getNoteById($_GET['id']); // Devuelve una nota, con el id pasado por url.
+    }
+
+    // Modificación de una nota.
+    public function update()
+    {
+        $this->noteObt->updateNote($_GET['id'], $_POST['title'], $_POST['content']); // Actualiza la nota.
         return $this->list(); // Vuelve a la lista de notas.
     }
 }
