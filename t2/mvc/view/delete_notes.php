@@ -1,5 +1,6 @@
 <div class="delete">
-    <div class="deleteNote">
+    <div class="input-group mb-3">
+
         <p class="title"><?= $dataToView->getTitle() ?></p> <!-- Título de la nota -->
         <hr />
         <p class="content"><?= $dataToView->getContent() ?></p> <!-- Contenido de la nota -->
