@@ -40,7 +40,7 @@ class noteController
     // Confirmación de borrado.
     public function confirmDelete()
     {
-        $this->view = 'delete';
+        $this->view = 'delete_notes';
         $this->title = "¿Seguro que quiere eliminar esta nota?";
         return $this->noteObt->getNoteById($_GET['id']); // Devuelve una nota, con el id pasado por url.
     }
@@ -56,7 +56,7 @@ class noteController
     // Confirmación de modificación.
     public function confirmUpdate()
     {
-        $this->view = 'update';
+        $this->view = 'edit_notes';
         $this->title = "Editar nota";
         return $this->noteObt->getNoteById($_GET['id']); // Devuelve una nota, con el id pasado por url.
     }
