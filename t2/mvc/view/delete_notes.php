@@ -1,9 +1,9 @@
 <div class="delete">
     <div class="input-group mb-3">
 
-        <p class="title"><?= $dataToView->getTitle() ?></p> <!-- Título de la nota -->
+        <p class="form-control"><?= $dataToView->getTitle() ?></p> <!-- Título de la nota -->
         <hr />
-        <p class="content"><?= $dataToView->getContent() ?></p> <!-- Contenido de la nota -->
+        <p class="form-control"><?= $dataToView->getContent() ?></p> <!-- Contenido de la nota -->
     </div>
     <!-- Formulario que envía el action delete con el id de la nota al index. -->
     <form action="index.php?action=delete&id=<?= $dataToView->getId() ?>" method="post">
