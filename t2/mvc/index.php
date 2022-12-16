@@ -13,9 +13,6 @@ $dataToView = array();
 $dataToView = $controlador->{$_GET["action"]}();
 
 
-
-
-
 require_once 'view/template/header.php';
 require_once 'view/' . $controlador->view . '.php';
 require_once 'view/template/footer.php';

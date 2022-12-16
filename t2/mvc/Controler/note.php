@@ -19,16 +19,15 @@ class noteController
     public function list()
     {
         $this->page_title = 'Listado de Notas';
-        header('location:');
         return $this->noteObt->getNotes();
     }
+
+    /*Insert notes*/
     public function insert()
     {
         $this->page_title = 'Insertar Nota';
         $this->view = 'insert_notes';
     }
-
-
 
     public function guardar()
     {
