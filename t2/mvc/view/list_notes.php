@@ -20,7 +20,7 @@
         }
     } else {
         ?>
-        <div class="alert alert-info"> Actualmente hay notas </div>
+        <div class="alert alert-info"> Actualmente no hay notas </div>
     <?php
     }
     ?>

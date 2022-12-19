@@ -91,6 +91,7 @@ class NoteTable
         if ($this->conection->query($sql) === TRUE) { // Si se borra correctamente.
             $this->conection->close(); // Cierra la conexión.
             return true; // Devuelve true.
+
         } else { // Si no.
             $this->conection->close(); // Cierra la conexión.
             return false; // Devuelve false.
