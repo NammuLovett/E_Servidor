@@ -31,7 +31,7 @@ class noteController
 
     public function guardar()
     {
-        $this->noteObt->insertNote($_POST['title'], $_POST['content']);
+        $this->noteObt->insertNote($_POST['titl e'], $_POST['content']);
         return $this->list();
     }
 
@@ -53,18 +53,18 @@ class noteController
     }
 
 
-    // Confirmación de modificación.
-    public function confirmUpdate()
-    {
-        $this->view = 'edit_notes';
-        $this->page_title = "Editar nota";
-        return $this->noteObt->getNoteById($_GET['id']); // Devuelve una nota, con el id pasado por url.
-    }
-
-    // Modificación de una nota.
+    // vista de editar.
     public function update()
     {
-        $this->noteObt->updateNote($_GET['id'], $_POST['title'], $_POST['content']); // Actualiza la nota.
-        return $this->list(); // Vuelve a la lista de notas.
+        $this->page_title = 'Actualizar Nota';
+        $this->view = 'edit_notes';
+        return $this->noteObt->getNoteById($_GET['id']); // Devuelve una nota, con el id pasado por url.
+
+    }
+    /* confirmacion vista editar */
+    public function confirmUpdate()
+    {
+        $this->noteObt->updateNote($_GET['id'], $_POST['title'], $_POST['content']);
+        return $this->list();
     }
 }
