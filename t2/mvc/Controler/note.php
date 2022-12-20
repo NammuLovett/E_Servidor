@@ -41,7 +41,7 @@ class noteController
     public function confirmDelete()
     {
         $this->view = 'delete_notes';
-        $this->title = "¿Seguro que quiere eliminar esta nota?";
+        $this->page_title = "¿Seguro que quiere eliminar esta nota?";
         return $this->noteObt->getNoteById($_GET['id']); // Devuelve una nota, con el id pasado por url.
     }
 
@@ -57,7 +57,7 @@ class noteController
     public function confirmUpdate()
     {
         $this->view = 'edit_notes';
-        $this->title = "Editar nota";
+        $this->page_title = "Editar nota";
         return $this->noteObt->getNoteById($_GET['id']); // Devuelve una nota, con el id pasado por url.
     }
 
