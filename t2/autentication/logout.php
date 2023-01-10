@@ -1,7 +1,7 @@
 <?php
-// Recuperamos la información de la sesión
+//Iniciamos sesión para recuperar los datos
 session_start();
 
-// Y la destruimos
-session_destroy();
+// Cierra la sesión sin destruir datos
+unset($_SESSION['usuario']); // Cerramos la sesión del usuario
 header("Location: index.php");

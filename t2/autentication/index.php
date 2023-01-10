@@ -3,7 +3,7 @@
         <legend>Login</legend>
         <div><span class='error'><?php echo $error; ?></span></div>
         <div class='fila'>
-            <label for='usuario'>Usuario:</label><br />
+            <label for='usuario'>Nombre de Usuario:</label><br />
             <input type='text' name='inputUsuario' id='usuario' maxlength="50" /><br />
         </div>
         <div class='fila'>
