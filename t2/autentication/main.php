@@ -9,6 +9,7 @@ if (!isset($_SESSION['usuario'])) {
     die("Error - debe <a href='index.php'>identificarse</a>.<br />");
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
